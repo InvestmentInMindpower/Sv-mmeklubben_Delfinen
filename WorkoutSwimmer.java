@@ -1,3 +1,3 @@
-public class WorkoutSwimmer
+public class WorkoutSwimmer extends Member
 {
 }

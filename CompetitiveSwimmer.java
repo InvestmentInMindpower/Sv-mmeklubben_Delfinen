@@ -1,3 +1,3 @@
-public class CompetitiveSwimmer
+public class CompetitiveSwimmer extends WorkoutSwimmer
 {
 }
