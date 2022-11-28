@@ -1,16 +1,21 @@
 
 public class Member implements MemberInterface
 {
-   private AgeGroup ageGroup;
+   //declaring variables
 
-   private boolean membershipStatus;
+    private int memberID;
+
+    private AgeGroup ageGroup;
+
+    private boolean membershipStatus;
 
 
-   public Member(AgeGroup ageGroup, boolean membershipStatus)
-   {
-       this.ageGroup = ageGroup;
-       this.membershipStatus = membershipStatus;
-   }
+    public Member(int memberID, AgeGroup ageGroup, boolean membershipStatus)
+    {
+        this
+        this.ageGroup = ageGroup;
+        this.membershipStatus = membershipStatus;
+    }
 
     public void setAgeGroup(AgeGroup ageGroup)
     {
