@@ -1,4 +1,4 @@
-enum AgeGroup
+public enum AgeGroup
 {
   Senior, Junior
 }
