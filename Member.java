@@ -1,16 +1,15 @@
 
-public class Member implements MemberInterface
+public abstract class Member implements MemberInterface
 {
    //declaring variables
     private int memberID;
-    private int cpr;
+    private String cpr;
     private AgeGroup ageGroup;
     private boolean membershipStatus;
 
     //creating constructors
-    public Member(int memberID, int cpr, AgeGroup ageGroup, boolean membershipStatus)
+    public Member(String cpr, AgeGroup ageGroup, boolean membershipStatus)
     {
-        this.memberID = memberID;
         this.cpr = cpr;
         this.ageGroup = ageGroup;
         this.membershipStatus = membershipStatus;

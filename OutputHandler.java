@@ -1,5 +1,3 @@
-import java.sql.SQLOutput;
-
 public class OutputHandler
 {
 
@@ -26,7 +24,28 @@ public class OutputHandler
         printTextBoxEnd();
     }
 
+    public static void printCprFormatInfo()
+    {
+        System.out.println("please enter your ");
+    }
 
+    public static void printInputDayInfo()
+    {
+        System.out.println("Please enter the day of the month you were born in the format [DD] ecs. 04");
+    }
+
+    public static void printInputMonthInfo()
+    {
+        System.out.println("Please enter the month of the year you were born in the format [MM] ecs. 12");
+    }
+    public static void printInputYearInfo()
+    {
+        System.out.println("Please enter the year you were born in the format [YYYY] ecs. 1999");
+    }
+    public static void printInputCiphersInfo()
+    {
+        System.out.println("Please enter the last 4 ciphers of your social security number [NNNN] ecs. 2414");
+    }
     public static void printWithSpacing4(String print)
     {
         System.out.println("    " + print);

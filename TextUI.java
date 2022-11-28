@@ -2,17 +2,17 @@ public class TextUI {
 
     public void runUI()
     {
-        InputHandler inputHandler = new InputHandler();
+        MemberHandler memberHandler = new MemberHandler();
         boolean run = true;
         while(run)
         {
             OutputHandler.printTextUIMenu();
-            int choice = inputHandler.inputMenuChoice();
+            int choice = InputHandler.inputMenuChoice();
             switch(choice)
             {
                 case 1:
                 {
-                    OutputHandler.printErrorWIP();
+                    memberHandler.CreateMember();
                     break;
                 }
                 case 2:
