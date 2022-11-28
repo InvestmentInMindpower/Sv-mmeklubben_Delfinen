@@ -1,3 +1,4 @@
-public class AgeGroup
-{//Insert Enum Here!
+enum AgeGroup
+{
+  Senior, Junior
 }
