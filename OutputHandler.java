@@ -34,6 +34,11 @@ public class OutputHandler
         System.out.println("Please enter the day of the month you were born in the format [DD] ecs. 04");
     }
 
+    public static void printCprFormError()
+    {
+        System.out.println("The CPR number is invalid");
+        System.out.println("Please try again");
+    }
     public static void printInputMonthInfo()
     {
         System.out.println("Please enter the month of the year you were born in the format [MM] ecs. 12");

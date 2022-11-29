@@ -7,8 +7,8 @@ public class CompetitiveSwimmer extends Member
     //creating variables
     ArrayList<SvoemmeDisciplin> svoemmeDisciplinList = new ArrayList<>();
 
-    public CompetitiveSwimmer(String cpr, AgeGroup ageGroup, boolean membershipStatus, String trainer) {
-        super(cpr, ageGroup, membershipStatus);
+    public CompetitiveSwimmer(String cpr, AgeGroup ageGroup, boolean membershipStatus, int subscriptionFee, int debt, int age, String trainer) {
+        super(cpr, ageGroup, membershipStatus, subscriptionFee, debt, age);
         this.trainer = trainer;
     }
 

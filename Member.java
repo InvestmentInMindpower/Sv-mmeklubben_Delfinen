@@ -6,8 +6,26 @@ public abstract class Member implements MemberInterface
     private String cpr;
     private AgeGroup ageGroup;
     private boolean membershipStatus;
+    private int subscriptionFee;
+    private int debt;
+    private int age;
 
 
+
+
+
+    //creating constructors
+    public Member(String cpr, AgeGroup ageGroup, boolean membershipStatus, int subscriptionFee, int debt, int age)
+    {
+        this.cpr = cpr;
+        this.ageGroup = ageGroup;
+        this.membershipStatus = membershipStatus;
+        this.subscriptionFee = subscriptionFee;
+        this.debt = debt;
+        this.age = age;
+    }
+
+    //creating methods
 
     public String getCpr()
     {
@@ -19,15 +37,6 @@ public abstract class Member implements MemberInterface
         return membershipStatus;
     }
 
-    //creating constructors
-    public Member(String cpr, AgeGroup ageGroup, boolean membershipStatus)
-    {
-        this.cpr = cpr;
-        this.ageGroup = ageGroup;
-        this.membershipStatus = membershipStatus;
-    }
-
-    //creating methods
     public void setAgeGroup(AgeGroup ageGroup)
     {
         this.ageGroup = ageGroup;
@@ -44,6 +53,8 @@ public abstract class Member implements MemberInterface
     {
         return membershipStatus;
     }
+
+    public void setDebt(int fee) {debt = debt + fee;}
 
     public String toString()
     {

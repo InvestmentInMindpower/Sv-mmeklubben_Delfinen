@@ -51,13 +51,13 @@ public class InputHandler
                  inputYear = globalInput.next();
                  OutputHandler.printInputCiphersInfo();
                  inputCifers = globalInput.next();
-                if(Integer.valueOf(inputDay) <= 31 && Integer.valueOf(inputDay) > 0 && Integer.valueOf(inputMonth) >= 12 && Integer.valueOf(inputMonth) > 0 && Integer.valueOf(inputYear) > 0 && Integer.valueOf(inputCifers) > 0 && Integer.valueOf(inputCifers) < 9999)
+                if(Integer.valueOf(inputDay) <= 31 && Integer.valueOf(inputDay) > 0 && Integer.valueOf(inputMonth) <= 12 && Integer.valueOf(inputMonth) > 0 && Integer.valueOf(inputYear) > 0 && Integer.valueOf(inputCifers) > 0 && Integer.valueOf(inputCifers) < 9999)
                 {
                     correctInput = true;
                 }
                 else
                 {
-                    OutputHandler.printGenericErrorText();
+                    OutputHandler.printCprFormError();
                 }
             }
             catch(Exception e)

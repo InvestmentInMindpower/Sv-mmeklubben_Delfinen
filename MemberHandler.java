@@ -22,7 +22,10 @@ public class MemberHandler
             OutputHandler.printTextBoxEnd();
             AgeGroup ageGroup = findAgeGroup(cpr);
             boolean active = InputHandler.fromInputToBool();
-            WorkoutSwimmer workoutSwimmer = new WorkoutSwimmer(cpr, ageGroup, active);
+            int fee = calculateSubscriptionFee(ageGroup, cpr, active);
+            int debt = 0;
+            int age = castCPRToAge(cpr);
+            WorkoutSwimmer workoutSwimmer = new WorkoutSwimmer(cpr, ageGroup, active, fee, debt, age);
             addToMemberList(workoutSwimmer);
         }
         else if(selection == 2)
@@ -32,11 +35,21 @@ public class MemberHandler
             OutputHandler.printTextBoxEnd();
             AgeGroup ageGroup = findAgeGroup(cpr);
             boolean active = InputHandler.fromInputToBool();
+            int fee = calculateSubscriptionFee(ageGroup, cpr, active);
+            int debt = 0;
+            int age = castCPRToAge(cpr);
             String trainer = InputHandler.inputString();
-            CompetitiveSwimmer competitiveSwimmer = new CompetitiveSwimmer(cpr, ageGroup, active, trainer);
+            CompetitiveSwimmer competitiveSwimmer = new CompetitiveSwimmer(cpr, ageGroup, active, fee, debt, age, trainer);
             addToMemberList(competitiveSwimmer);
         }
 
+    }
+
+    public int castCPRToAge(String cpr)
+    {
+        LocalDate dob = convertCprToLocalDate(cpr);
+        int age = findAge(dob);
+        return age;
     }
 
     public AgeGroup findAgeGroup(String cpr)
@@ -104,6 +117,38 @@ public class MemberHandler
     {
         int memberShipChoice = InputHandler.inputMenuChoice();
         return memberShipChoice;
+    }
+
+    public void chargeMembers()
+    {
+        for(Member member : memberList)
+        {
+            member.setDebt(calculateSubscriptionFee(member.getAgeGroup(),member.getCpr(), member.getMembershipStatus()));
+        }
+    }
+
+    public int calculateSubscriptionFee(AgeGroup ageGroup, String cpr, boolean active)
+    {
+        int fee = 0;
+        int age = castCPRToAge(cpr);
+
+        if(active == true && ageGroup == AgeGroup.Junior)
+        {
+            fee = fee + 1000;
+        }
+        else if(active == true && ageGroup == AgeGroup.Senior)
+        {
+            fee = fee + 1600;
+        }
+        else if(active == true && age >= 60)
+        {
+            fee = fee + 1200;
+        }
+        else if(active == false)
+        {
+           fee = fee + 500;
+        }
+        return fee;
     }
 
 
