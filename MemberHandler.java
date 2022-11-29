@@ -77,9 +77,18 @@ public class MemberHandler
         return dob;
     }
 
-    public Member findMember(int cpr)
+    public Member findMember(String cpr)
     {
-        //TODO: go through array and find member with CPR number, then return
+        Member member;
+
+        for(int i=0; i<memberList.size(); i++)
+        {
+            if (memberList.get(i).getCpr().equals(cpr))
+            {
+                member = memberList.get(i);
+                return member;
+            }
+        }
         return null;
     }
 
@@ -95,6 +104,5 @@ public class MemberHandler
         memberList.add(member);
         System.out.println(member.toString());
     }
-
 
 }

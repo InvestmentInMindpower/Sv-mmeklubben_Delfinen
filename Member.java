@@ -2,10 +2,22 @@
 public abstract class Member implements MemberInterface
 {
    //declaring variables
-    private int memberID;
+
     private String cpr;
     private AgeGroup ageGroup;
     private boolean membershipStatus;
+
+
+
+    public String getCpr()
+    {
+        return cpr;
+    }
+
+    public boolean isMembershipStatus()
+    {
+        return membershipStatus;
+    }
 
     //creating constructors
     public Member(String cpr, AgeGroup ageGroup, boolean membershipStatus)
@@ -35,6 +47,6 @@ public abstract class Member implements MemberInterface
 
     public String toString()
     {
-        return "Member ID: " + memberID + "\nCPR: " + cpr + "\nAgeGroup: " + ageGroup + "\nMembershipStatus: " + membershipStatus;
+        return "CPR: " + cpr + "\nAgeGroup: " + ageGroup + "\nMembershipStatus: " + membershipStatus;
     }
 }
