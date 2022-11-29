@@ -77,9 +77,10 @@ public class MemberHandler
         return dob;
     }
 
-    public Member findMember(String cpr)
+    public Member findMember()
     {
         Member member;
+        String cpr = InputHandler.inputCPR();
 
         for(int i=0; i<memberList.size(); i++)
         {
@@ -90,6 +91,13 @@ public class MemberHandler
             }
         }
         return null;
+    }
+    public void PrintAllMemberInformation()
+    {
+        Member member = findMember();
+        String information = member.toString();
+        OutputHandler.printAllMemberInformation(information);
+
     }
 
     public int selectMembershipType()

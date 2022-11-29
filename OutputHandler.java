@@ -46,6 +46,14 @@ public class OutputHandler
     {
         System.out.println("Please enter the last 4 ciphers of your social security number [NNNN] ecs. 2414");
     }
+    public static void printInputFindMember() //bliver ikke brugt indtil videre
+    {
+        System.out.println("Please Enter Cpr number of the member you want information for");
+    }
+    public static void printAllMemberInformation(String information)
+    {
+        System.out.println(information);
+    }
     public static void printWithSpacing4(String print)
     {
         System.out.println("    " + print);

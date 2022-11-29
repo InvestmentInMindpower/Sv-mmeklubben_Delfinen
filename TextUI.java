@@ -27,7 +27,7 @@ public class TextUI {
                 }
                 case 4:
                 {
-                    OutputHandler.printErrorWIP();
+                    memberHandler.PrintAllMemberInformation();
                     break;
                 }
                 case 5:
