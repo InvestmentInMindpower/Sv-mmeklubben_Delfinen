@@ -22,7 +22,6 @@ public class TextUI {
                 }
                 case 3:
                 {
-                    OutputHandler.printErrorWIP();
                     break;
                 }
                 case 4:

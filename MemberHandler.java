@@ -5,6 +5,8 @@ import java.io.IOException;
 import java.time.temporal.ChronoUnit;
 import java.util.ArrayList;
 import java.time.*;
+import java.util.Collections;
+import java.util.Comparator;
 
 public class MemberHandler
 {
@@ -24,9 +26,12 @@ public class MemberHandler
             {
 
                 String[] values = memberLine.split(",");
-                memberList.add(new Member(values[0],AgeGroup.valueOf(values[1]), Boolean.parseBoolean(values[2]), Integer.parseInt(values[3]), Integer.parseInt(values[4]), Integer.parseInt(values[5])));
-                //System.out.println("Number of members: " + memberList.size());
-                //System.out.println(memberList.get(memberList.size()-1));
+                memberList.add(new Member(values[0],AgeGroup.valueOf(values[1]), Boolean.parseBoolean(values[2]), Integer.parseInt(values[3]), Integer.parseInt(values[4]), Integer.parseInt(values[5]), Double.parseDouble(values[6]), Double.parseDouble(values[7]), Double.parseDouble(values[8]), Double.parseDouble(values[9])));
+               // System.out.println("Number of members: " + memberList.size());
+             // System.out.println(memberList.get(memberList.size()-1));
+
+
+
 
             }
         } catch (FileNotFoundException e) {
@@ -48,7 +53,7 @@ public class MemberHandler
 
                 String[] values = staevneLine.split(",");
                 staevneResultatList.add(new StaevneResultat(values[0], values[1], Integer.parseInt(values[2]), Double.parseDouble(values[3])));
-                System.out.println("Number of members: " + staevneResultatList.size());
+               // System.out.println("Number of members: " + staevneResultatList.size());
                 //System.out.println(memberList.get(staevneResultatList.size()-1));
 
             }
@@ -59,8 +64,21 @@ public class MemberHandler
         }
     }
 
-
-
+    public void fetchBestCrawlResultat()
+    {
+        Collections.sort(memberList, new Comparator<Member>()
+        {
+            @Override
+            public int compare(Member o1, Member o2)
+            {
+                return Double.toString(o1.getCrawlResultat()).compareTo(Double.toString(o2.getCrawlResultat()));
+            }
+        });
+            for(int i=0; i<5; i++)
+            {
+                System.out.println(memberList.get(i).getCpr() +" "+ memberList.get(i).getCrawlResultat());
+            }
+    }
 
 
 //TODO: make it so this is dependant on the number of members in memberList on startup

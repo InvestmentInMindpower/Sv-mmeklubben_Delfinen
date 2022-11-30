@@ -10,6 +10,14 @@ public class Member implements MemberInterface
     private int debt;
     private int age;
 
+    private double crawlResultat;
+
+    private double brystsoevmningResultat;
+
+    private double butterflyResultat;
+
+    private double rygCrawlResultat;
+
 
 
 
@@ -23,6 +31,21 @@ public class Member implements MemberInterface
         this.subscriptionFee = subscriptionFee;
         this.debt = debt;
         this.age = age;
+
+    }
+    public Member(String cpr, AgeGroup ageGroup, boolean membershipStatus, int subscriptionFee, int debt, int age, double crawlResultat, double brystsoevmningResultat, double butterflyResultat, double rygCrawlResultat)
+    {
+        this.cpr = cpr;
+        this.ageGroup = ageGroup;
+        this.membershipStatus = membershipStatus;
+        this.subscriptionFee = subscriptionFee;
+        this.debt = debt;
+        this.age = age;
+        this.crawlResultat = crawlResultat;
+        this.brystsoevmningResultat = brystsoevmningResultat;
+        this.butterflyResultat = butterflyResultat;
+        this.rygCrawlResultat = rygCrawlResultat;
+
     }
 
     //creating methods
@@ -58,11 +81,51 @@ public class Member implements MemberInterface
 
     public String toString()
     {
-        return "CPR: " + cpr + "\nAgeGroup: " + ageGroup + "\nMembershipStatus: " + membershipStatus;
+        return "CPR: " + cpr + "\nAgeGroup: " + ageGroup + "\nMembershipStatus: " + membershipStatus + "\nCrawlResultat: " + crawlResultat + "\nBrystResultat :" + brystsoevmningResultat + "\nButterflyResultat: " + butterflyResultat +"\nRygcrawlResultat: "+ rygCrawlResultat;
     }
 
     public String outputMemberstoDatabase()
     {
         return cpr + "," + ageGroup + "," + membershipStatus + "," + subscriptionFee + "," + debt + "," + age;
+    }
+
+    public double getCrawlResultat()
+    {
+        return crawlResultat;
+    }
+
+    public void setCrawlResultat(double crawlResultat)
+    {
+        this.crawlResultat = crawlResultat;
+    }
+
+    public double getBrystsoevmningResultat()
+    {
+        return brystsoevmningResultat;
+    }
+
+    public void setBrystsoevmningResultat(double brystsoevmningResultat)
+    {
+        this.brystsoevmningResultat = brystsoevmningResultat;
+    }
+
+    public double getButterflyResultat()
+    {
+        return butterflyResultat;
+    }
+
+    public void setButterflyResultat(double butterflyResultat)
+    {
+        this.butterflyResultat = butterflyResultat;
+    }
+
+    public double getRygCrawlResultat()
+    {
+        return rygCrawlResultat;
+    }
+
+    public void setRygCrawlResultat(double rygCrawlResultat)
+    {
+        this.rygCrawlResultat = rygCrawlResultat;
     }
 }

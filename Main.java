@@ -4,5 +4,6 @@ public class Main {
     {
         ApplicationDolphinSwimmingClub applicationDolphinSwimmingClub = new ApplicationDolphinSwimmingClub();
         applicationDolphinSwimmingClub.runApplication();
+        
     }
 }
