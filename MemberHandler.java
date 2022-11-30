@@ -1,4 +1,5 @@
 import java.io.*;
+import java.security.cert.CollectionCertStoreParameters;
 import java.time.temporal.ChronoUnit;
 import java.util.ArrayList;
 import java.time.*;
@@ -61,6 +62,23 @@ public class MemberHandler
 
     //booting complete
 
+    public void fetchBestBrystsvoemning()
+    {
+        Collections.sort(memberList, new Comparator<Member>()
+        {
+            @Override
+            public int compare(Member o1, Member o2)
+            {
+                return Double.toString(o1.getBrystsoevmningResultat()).compareTo(Double.toString(o2.getBrystsoevmningResultat()));
+            }
+        });
+        for(int i=0; i<5; i++)
+        {
+            System.out.println(memberList.get(i).getCpr() +" "+ memberList.get(i).getBrystsoevmningResultat());
+        }
+    }
+
+
     public void fetchBestCrawlResultat()
     {
         Collections.sort(memberList, new Comparator<Member>()
@@ -75,6 +93,38 @@ public class MemberHandler
             {
                 System.out.println(memberList.get(i).getCpr() +" "+ memberList.get(i).getCrawlResultat());
             }
+    }
+
+    public void fetchBestButterflyResultat()
+    {
+        Collections.sort(memberList, new Comparator<Member>()
+        {
+            @Override
+            public int compare(Member o1, Member o2)
+            {
+                return Double.toString(o1.getButterflyResultat()).compareTo(Double.toString(o2.getButterflyResultat()));
+            }
+        });
+        for(int i=0; i<5; i++)
+        {
+            System.out.println(memberList.get(i).getCpr() +" "+ memberList.get(i).getButterflyResultat());
+        }
+    }
+
+    public void fetchBestRygCrawlResultat()
+    {
+        Collections.sort(memberList, new Comparator<Member>()
+        {
+            @Override
+            public int compare(Member o1, Member o2)
+            {
+                return Double.toString(o1.getRygCrawlResultat()).compareTo(Double.toString(o2.getRygCrawlResultat()));
+            }
+        });
+        for(int i=0; i<5; i++)
+        {
+            System.out.println(memberList.get(i).getCpr() +" "+ memberList.get(i).getButterflyResultat());
+        }
     }
 
 
