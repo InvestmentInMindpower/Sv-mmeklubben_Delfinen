@@ -1,10 +1,68 @@
+import java.io.BufferedReader;
+import java.io.FileNotFoundException;
+import java.io.FileReader;
+import java.io.IOException;
 import java.time.temporal.ChronoUnit;
 import java.util.ArrayList;
 import java.time.*;
-import java.util.*;
+
 public class MemberHandler
 {
     ArrayList<Member> memberList = new ArrayList<>();
+    ArrayList<StaevneResultat> staevneResultatList = new ArrayList<>();
+
+    //booting system
+
+    //create members from database
+    String memberPath = "members.txt";
+    String memberLine = "";
+    BufferedReader br;
+    {
+        try {
+            br = new BufferedReader(new FileReader(memberPath));
+            while((memberLine = br.readLine()) != null)
+            {
+
+                String[] values = memberLine.split(",");
+                memberList.add(new Member(values[0],AgeGroup.valueOf(values[1]), Boolean.parseBoolean(values[2]), Integer.parseInt(values[3]), Integer.parseInt(values[4]), Integer.parseInt(values[5])));
+                //System.out.println("Number of members: " + memberList.size());
+                //System.out.println(memberList.get(memberList.size()-1));
+
+            }
+        } catch (FileNotFoundException e) {
+            throw new RuntimeException(e);
+        } catch (IOException e) {
+            throw new RuntimeException(e);
+        }
+    }
+
+    //create staevneresultater from database
+    String staevnePath = "staevneresultater.txt";
+    String staevneLine = "";
+    //BufferedReader brb;
+    {
+        try {
+            br = new BufferedReader(new FileReader(staevnePath));
+            while((staevneLine = br.readLine()) != null)
+            {
+
+                String[] values = staevneLine.split(",");
+                staevneResultatList.add(new StaevneResultat(values[0], values[1], Integer.parseInt(values[2]), Double.parseDouble(values[3])));
+                System.out.println("Number of members: " + staevneResultatList.size());
+                //System.out.println(memberList.get(staevneResultatList.size()-1));
+
+            }
+        } catch (FileNotFoundException e) {
+            throw new RuntimeException(e);
+        } catch (IOException e) {
+            throw new RuntimeException(e);
+        }
+    }
+
+
+
+
+
 //TODO: make it so this is dependant on the number of members in memberList on startup
 
 

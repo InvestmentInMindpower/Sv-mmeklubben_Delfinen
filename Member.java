@@ -1,5 +1,5 @@
 
-public abstract class Member implements MemberInterface
+public class Member implements MemberInterface
 {
    //declaring variables
 
@@ -59,5 +59,10 @@ public abstract class Member implements MemberInterface
     public String toString()
     {
         return "CPR: " + cpr + "\nAgeGroup: " + ageGroup + "\nMembershipStatus: " + membershipStatus;
+    }
+
+    public String outputMemberstoDatabase()
+    {
+        return cpr + "," + ageGroup + "," + membershipStatus + "," + subscriptionFee + "," + debt + "," + age;
     }
 }
