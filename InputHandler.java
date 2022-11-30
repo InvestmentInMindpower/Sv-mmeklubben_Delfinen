@@ -121,6 +121,23 @@ public class InputHandler
         return input;
     }
 
+    public static boolean inputPayDebt()
+    {
+        boolean payment = false;
+        System.out.println("Do you wish to pay your debt?");
+        System.out.println("Press 1 for Yes\nPress 2 for No");
+        int input = globalInput.nextInt();
+
+        if(input == 1)
+        {
+            payment = true;
+        }
+        else if(input == 2)
+        {
+           payment = false;
+        }
+        return payment;
+    }
 
 
 }

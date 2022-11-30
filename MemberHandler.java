@@ -227,6 +227,58 @@ public class MemberHandler
         return fee;
     }
 
+    public void payDebt(String cpr)
+    {
+        for(Member member : memberList)
+        {
+            //To-Do: Måske et try catch rundt om dette if statement, hvis der ikke er et cpr nr der matcher
+            if(cpr.equals(member.getCpr()))
+            {
+                boolean payBoolean = InputHandler.inputPayDebt();
+                if(payBoolean)
+                {
+                    member.setDebt(0);
+                    System.out.println("Thank you for your payment");
+                }
+                else
+                {
+                    System.out.println("Okay have a good day");
+                    OutputHandler.printTextBoxEnd();
+                    break;
+                }
+            }
+        }
+    }
+
+    public void removeMember(String cpr)
+    {
+        for(Member member : memberList)
+        {
+            if(cpr.equals(member.getCpr()))
+            {
+                memberList.remove(member);
+                //TO-DO: Print the whole Arraylist to the member file after the member have been removed
+            }
+            else
+            {
+                System.out.println("We do not have a member who matches that number");
+                OutputHandler.printTextBoxEnd();
+            }
+        }
+    }
+
+    public void printResidualMembers()
+    {
+        System.out.println("All the members who have a debt:");
+        for(Member member : memberList)
+        {
+            if(member.getDebt() > 0)
+            {
+                System.out.println(member);
+            }
+        }
+    }
+
 
     public void addToMemberList(Member member)
     {

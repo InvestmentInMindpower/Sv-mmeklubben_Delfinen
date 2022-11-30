@@ -77,6 +77,10 @@ public class Member implements MemberInterface
         return membershipStatus;
     }
 
+    public int getDebt()
+    {
+        return debt;
+    }
     public void setDebt(int fee) {debt = debt + fee;}
 
     public String toString()

@@ -21,6 +21,9 @@ public class OutputHandler
         printWithSpacing4("2: Update member");
         printWithSpacing4("3: Remove member");
         printWithSpacing4("4: Print all member information");
+        printWithSpacing4("5: Print all residual members");
+        printWithSpacing4("7: Receive payment");
+        printWithSpacing4("8: Charge all members");
         printTextBoxEnd();
     }
 
