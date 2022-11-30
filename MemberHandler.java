@@ -1,7 +1,4 @@
-import java.io.BufferedReader;
-import java.io.FileNotFoundException;
-import java.io.FileReader;
-import java.io.IOException;
+import java.io.*;
 import java.time.temporal.ChronoUnit;
 import java.util.ArrayList;
 import java.time.*;
@@ -27,12 +24,7 @@ public class MemberHandler
 
                 String[] values = memberLine.split(",");
                 memberList.add(new Member(values[0],AgeGroup.valueOf(values[1]), Boolean.parseBoolean(values[2]), Integer.parseInt(values[3]), Integer.parseInt(values[4]), Integer.parseInt(values[5]), Double.parseDouble(values[6]), Double.parseDouble(values[7]), Double.parseDouble(values[8]), Double.parseDouble(values[9])));
-               // System.out.println("Number of members: " + memberList.size());
-             // System.out.println(memberList.get(memberList.size()-1));
-
-
-
-
+                System.out.println("Number of members: " + memberList.size());
             }
         } catch (FileNotFoundException e) {
             throw new RuntimeException(e);
@@ -40,6 +32,9 @@ public class MemberHandler
             throw new RuntimeException(e);
         }
     }
+
+    //TODO TEST
+
 
     //create staevneresultater from database
     String staevnePath = "staevneresultater.txt";
@@ -53,8 +48,8 @@ public class MemberHandler
 
                 String[] values = staevneLine.split(",");
                 staevneResultatList.add(new StaevneResultat(values[0], values[1], Integer.parseInt(values[2]), Double.parseDouble(values[3])));
-               // System.out.println("Number of members: " + staevneResultatList.size());
-                //System.out.println(memberList.get(staevneResultatList.size()-1));
+                //System.out.println("Number of members: " + staevneResultatList.size());
+                //System.out.println(staevneResultatList.get(staevneResultatList.size()-1).outputStaevneResultat());
 
             }
         } catch (FileNotFoundException e) {
@@ -63,6 +58,8 @@ public class MemberHandler
             throw new RuntimeException(e);
         }
     }
+
+    //booting complete
 
     public void fetchBestCrawlResultat()
     {
@@ -285,5 +282,66 @@ public class MemberHandler
         memberList.add(member);
         System.out.println(member.toString());
     }
+
+    //output memberList to database
+    public void outputToMemberDatabase()
+    {
+        String memberFileName = "membersTest.txt";
+        String memberLine = "";
+        String finalString = "";
+        StringBuilder stringBuilder = new StringBuilder();
+
+        //build finalString that should be printed
+        for (int i = 0; i < memberList.size(); i++)
+        {
+            System.out.println(memberList.get(i).outputMemberstoDatabase());
+            stringBuilder.append(memberList.get(i).outputMemberstoDatabase());
+            stringBuilder.append(System.getProperty("line.separator"));
+        }
+
+        finalString = stringBuilder.toString();
+
+        PrintStream output = null;
+        try
+        {
+            output = new PrintStream(new File(memberFileName));
+        } catch(FileNotFoundException e)
+        {
+            throw new RuntimeException(e);
+        }
+
+        output.println(finalString);
+    }
+
+    public void outputToStaevneResultatDatabase()
+    {
+        String memberFileName = "staevneResultatTest.txt";
+        String memberLine = "";
+        String finalString = "";
+        StringBuilder stringBuilder = new StringBuilder();
+
+        //build finalString that should be printed
+        for (int i = 0; i < staevneResultatList.size(); i++)
+        {
+            System.out.println(staevneResultatList.get(i).outputStaevneResultat());
+            stringBuilder.append(staevneResultatList.get(i).outputStaevneResultat());
+            stringBuilder.append(System.getProperty("line.separator"));
+        }
+
+        finalString = stringBuilder.toString();
+
+        PrintStream output = null;
+        try
+        {
+            output = new PrintStream(new File(memberFileName));
+        } catch(FileNotFoundException e)
+        {
+            throw new RuntimeException(e);
+        }
+
+        output.println(finalString);
+    }
+
+
 
 }
