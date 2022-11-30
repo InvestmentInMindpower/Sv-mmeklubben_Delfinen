@@ -22,7 +22,8 @@ public class TextUI {
                 }
                 case 3:
                 {
-                    OutputHandler.printErrorWIP();
+                    System.out.println("Write your CPR number");
+                    memberHandler.removeMember(InputHandler.inputString());
                     break;
                 }
                 case 4:
@@ -32,7 +33,7 @@ public class TextUI {
                 }
                 case 5:
                 {
-                    OutputHandler.printErrorWIP();
+                    memberHandler.printResidualMembers();
                     break;
                 }
                 case 6:
@@ -42,12 +43,13 @@ public class TextUI {
                 }
                 case 7:
                 {
-                    OutputHandler.printErrorWIP();
+                    System.out.println("Write your CPR number");
+                    memberHandler.payDebt(InputHandler.inputString());
                     break;
                 }
                 case 8:
                 {
-                    OutputHandler.printErrorWIP();
+                    memberHandler.chargeMembers();
                     break;
                 }
                 case 9:
