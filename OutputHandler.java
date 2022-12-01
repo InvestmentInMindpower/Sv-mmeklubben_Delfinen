@@ -34,6 +34,16 @@ public class OutputHandler
         printTextBoxEnd();
     }
 
+    public static void printTextUIMenuUpdate()
+    {
+        printTextBoxStart();
+        System.out.println("Enter a number from 1-10 to select from the menu");
+        printWithSpacing4("1: Change Member type");
+        printWithSpacing4("2: Change Member AgeGroup");
+        printWithSpacing4("3: Change membership Status");
+        printTextBoxEnd();
+    }
+
     public static void printCprFormatInfo()
     {
         System.out.println("please enter your ");

@@ -8,7 +8,7 @@ public class TextUI {
         while(run)
         {
             OutputHandler.printTextUIMenu();
-            int choice = InputHandler.inputMenuChoice();
+            int choice = InputHandler.inputMenuChoice(10);
             switch(choice)
             {
                 case 1:
@@ -18,7 +18,32 @@ public class TextUI {
                 }
                 case 2:
                 {
-                    OutputHandler.printErrorWIP();
+                    //Submenu for update Member
+                    OutputHandler.printTextUIMenuUpdate();
+                    int updateChoice = InputHandler.inputMenuChoice(3);
+                    switch(updateChoice)
+                    {
+                        case 1:
+                        {
+                            //change membership type method
+                            //remember that this will change subscription fee and possibly remove staevneresults
+                            OutputHandler.printErrorWIP();
+                            break;
+                        }
+                        case 2:
+                        {
+                            //change membership ageGroup method
+                            OutputHandler.printErrorWIP();
+                            break;
+                        }
+                        case 3:
+                        {
+                            //Change membership passive/active method
+                            //remember this will change subscription fee for member
+                            OutputHandler.printErrorWIP();
+                            break;
+                        }
+                    }
                     break;
                 }
                 case 3:

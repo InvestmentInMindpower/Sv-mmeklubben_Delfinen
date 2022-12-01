@@ -11,7 +11,7 @@ public class InputHandler
 {
     private static Scanner globalInput = new Scanner(System.in);
 
-    public static int inputMenuChoice() throws InputMismatchException
+    public static int inputMenuChoice(int options) throws InputMismatchException
     {
         boolean correctInput = false;
         int input = 0;
@@ -25,7 +25,7 @@ public class InputHandler
             {
                 OutputHandler.printGenericErrorText();
             }
-            if(input <= 10 && input > 0)
+            if(input <= options && input > 0)
             {
                 correctInput = true;
             }

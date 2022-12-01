@@ -137,7 +137,7 @@ public class MemberHandler
 
     public int selectMembershipType()
     {
-        int memberShipChoice = InputHandler.inputMenuChoice();
+        int memberShipChoice = InputHandler.inputMenuChoice(2);
         return memberShipChoice;
     }
 
