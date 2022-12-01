@@ -1,3 +1,4 @@
+import java.io.*;
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.Comparator;
@@ -5,10 +6,24 @@ import java.util.Comparator;
 public class UserData
 {
     ArrayList<Member> memberList;
-    public UserData(ArrayList<Member> memberList)
+    ArrayList<StaevneResultat> staevneResultatList;
+    public UserData(ArrayList<Member> memberList, ArrayList<StaevneResultat> staevneResultatList)
     {
         this.memberList = memberList;
+        this.staevneResultatList = staevneResultatList;
     }
+
+    String memberPath = "members.txt";
+    String memberLine = "";
+    String staevnePath = "staevneresultater.txt";
+    String staevneLine = "";
+    public void bootUserData() throws FileNotFoundException
+    {
+        InputHandler.InputMemberDataFromFile(memberList, memberPath);
+        InputHandler.InputStaeveneDataFromFile(staevneResultatList, staevnePath);
+    }
+
+
 
     public void fetchBestBrystsvoemning()
     {
@@ -28,6 +43,18 @@ public class UserData
         }
     }
 
+    public void outputToMemberDatabase()
+    {
+        String memberFileName = "membersTest.txt";
+        OutputHandler.writeToMemberDataBase(memberList, memberFileName);
+
+    }
+
+    public void outputToStaevneResultatDatabase()
+    {
+        String staevneFileName = "staevneResultater.txt";
+        OutputHandler.writeToStaevneDataBase(staevneResultatList, staevneFileName);
+    }
 
     public void fetchBestCrawlResultat()
     {
