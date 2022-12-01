@@ -1,5 +1,6 @@
 import java.io.*;
 import java.security.cert.CollectionCertStoreParameters;
+import java.sql.SQLOutput;
 import java.time.temporal.ChronoUnit;
 import java.util.ArrayList;
 import java.time.*;
@@ -46,8 +47,8 @@ public class MemberHandler
             int debt = 0;
             int age = castCPRToAge(cpr);
             WorkoutSwimmer workoutSwimmer = new WorkoutSwimmer("WorkoutSwimmer", cpr, ageGroup, active, fee, debt, age);
-            userData.outputToMemberDatabase();
             addToMemberList(workoutSwimmer);
+            userData.outputToMemberDatabase();
         }
         else if(selection == 2)
         {
@@ -59,10 +60,11 @@ public class MemberHandler
             int fee = calculateSubscriptionFee(ageGroup, cpr, active);
             int debt = 0;
             int age = castCPRToAge(cpr);
+            System.out.println("Which trainer have you signed up for [Martin] eller [Christina], skriv navn");
             String trainer = InputHandler.inputString();
             CompetitiveSwimmer competitiveSwimmer = new CompetitiveSwimmer("CompetetiveSwimmer", cpr, ageGroup, active, fee, debt, age, trainer);
-            userData.outputToMemberDatabase();
             addToMemberList(competitiveSwimmer);
+            userData.outputToMemberDatabase();
         }
 
     }
@@ -145,6 +147,7 @@ public class MemberHandler
         {
             member.setDebt(calculateSubscriptionFee(member.getAgeGroup(),member.getCpr(), member.getMembershipStatus()));
         }
+        userData.outputToMemberDatabase();
     }
 
     public int calculateSubscriptionFee(AgeGroup ageGroup, String cpr, boolean active)
@@ -199,6 +202,7 @@ public class MemberHandler
                     break;
                 }
             }
+            userData.outputToMemberDatabase();
         }
     }
 
@@ -217,6 +221,7 @@ public class MemberHandler
                 OutputHandler.printTextBoxEnd();
             }
         }
+        userData.outputToMemberDatabase();
     }
 
     public void printResidualMembers()
@@ -236,6 +241,7 @@ public class MemberHandler
     {
         memberList.add(member);
         System.out.println(member.toString());
+        userData.outputToMemberDatabase();
     }
 
 
