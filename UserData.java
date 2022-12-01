@@ -36,9 +36,23 @@ public class UserData
         OutputHandler.writeToStaevneDataBase(staevneResultatList, staevneFileName);
     }
 
+    public ArrayList<CompetitiveSwimmer> createCompetitiveSwimmerList()
+    {
+        ArrayList<CompetitiveSwimmer> competitiveSwimmerList = new ArrayList<>();
+        for(Member member: memberList)
+        {
+            if(member instanceof CompetitiveSwimmer)
+            {
+                competitiveSwimmerList.add((CompetitiveSwimmer) member);
+            }
+        }
+        return competitiveSwimmerList;
+    }
+
     public void fetchBestCrawlResultat()
     {
-        Collections.sort(memberList, new Comparator<Member>()
+        ArrayList<CompetitiveSwimmer> competitiveSwimmerList = createCompetitiveSwimmerList();
+        Collections.sort(competitiveSwimmerList, new Comparator<Member>()
         {
             @Override
             public int compare(Member o1, Member o2)
@@ -47,16 +61,30 @@ public class UserData
             }
         });
         System.out.println("Bedste tider for Crawlsvoemning:");
-        for(int i=0; i<5; i++)
-        {
 
-            System.out.println(memberList.get(i).getCpr() +" "+ memberList.get(i).getCrawlResultat());
+        if(competitiveSwimmerList.size() < 5)
+        {
+            for(int i=0; i<competitiveSwimmerList.size(); i++)
+            {
+                System.out.println(competitiveSwimmerList.get(i).getCpr() +" "+ competitiveSwimmerList.get(i).getCrawlResultat());
+            }
         }
+        else
+        {
+            for(int i=0; i<5; i++)
+            {
+
+                System.out.println(competitiveSwimmerList.get(i).getCpr() +" "+ competitiveSwimmerList.get(i).getCrawlResultat());
+            }
+        }
+
+
     }
 
     public void fetchBestButterflyResultat()
     {
-        Collections.sort(memberList, new Comparator<Member>()
+        ArrayList<CompetitiveSwimmer> competitiveSwimmerList = createCompetitiveSwimmerList();
+        Collections.sort(competitiveSwimmerList, new Comparator<Member>()
         {
             @Override
             public int compare(Member o1, Member o2)
@@ -65,16 +93,29 @@ public class UserData
             }
         });
         System.out.println("Bedste tider for Butterflysvoemning:");
-        for(int i=0; i<5; i++)
+        if(competitiveSwimmerList.size() < 5)
         {
+            for(int i=0; i<competitiveSwimmerList.size(); i++)
+            {
 
-            System.out.println(memberList.get(i).getCpr() +" "+ memberList.get(i).getButterflyResultat());
+                System.out.println(competitiveSwimmerList.get(i).getCpr() +" "+ competitiveSwimmerList.get(i).getButterflyResultat());
+            }
         }
+        else
+        {
+            for(int i=0; i<5; i++)
+            {
+
+                System.out.println(competitiveSwimmerList.get(i).getCpr() +" "+ competitiveSwimmerList.get(i).getButterflyResultat());
+            }
+        }
+
     }
 
     public void fetchBestRygCrawlResultat()
     {
-        Collections.sort(memberList, new Comparator<Member>()
+        ArrayList<CompetitiveSwimmer> competitiveSwimmerList = createCompetitiveSwimmerList();
+        Collections.sort(competitiveSwimmerList, new Comparator<Member>()
         {
             @Override
             public int compare(Member o1, Member o2)
@@ -82,16 +123,28 @@ public class UserData
                 return Double.toString(o1.getRygCrawlResultat()).compareTo(Double.toString(o2.getRygCrawlResultat()));
             }
         });System.out.println("Bedste tider for Rygcrawlsvoemning:");
-        for(int i=0; i<5; i++)
-        {
 
-            System.out.println(memberList.get(i).getCpr() +" "+ memberList.get(i).getRygCrawlResultat());
+        if(competitiveSwimmerList.size() < 5)
+        {
+            for(int i=0; i<competitiveSwimmerList.size(); i++)
+            {
+                System.out.println(competitiveSwimmerList.get(i).getCpr() +" "+ competitiveSwimmerList.get(i).getRygCrawlResultat());
+            }
+        }
+        else
+        {
+            for(int i=0; i<5; i++)
+            {
+
+                System.out.println(competitiveSwimmerList.get(i).getCpr() +" "+ competitiveSwimmerList.get(i).getRygCrawlResultat());
+            }
         }
     }
 
     public void fetchBestBrystsvoemning()
     {
-        Collections.sort(memberList, new Comparator<Member>()
+        ArrayList<CompetitiveSwimmer> competitiveSwimmerList = createCompetitiveSwimmerList();
+        Collections.sort(competitiveSwimmerList, new Comparator<Member>()
         {
             @Override
             public int compare(Member o1, Member o2)
@@ -100,11 +153,21 @@ public class UserData
             }
         });
         System.out.println("Bedste tider for Brystsvoemning:");
-        for(int i=0; i<5; i++)
-        {
 
-            System.out.println(memberList.get(i).getCpr() +" "+ memberList.get(i).getBrystsoevmningResultat());
+        if(competitiveSwimmerList.size() < 5)
+        {
+            for(int i=0; i<competitiveSwimmerList.size(); i++)
+            {
+                System.out.println(competitiveSwimmerList.get(i).getCpr() +" "+ competitiveSwimmerList.get(i).getBrystsoevmningResultat());
+            }
+        }
+        else
+        {
+            for(int i=0; i<5; i++)
+            {
+
+                System.out.println(competitiveSwimmerList.get(i).getCpr() +" "+ competitiveSwimmerList.get(i).getBrystsoevmningResultat());
+            }
         }
     }
-
 }
