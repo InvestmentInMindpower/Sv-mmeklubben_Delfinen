@@ -1,7 +1,8 @@
+import java.io.FileNotFoundException;
+
 public class TextUI {
 
-    public void runUI()
-    {
+    public void runUI() throws FileNotFoundException {
         MemberHandler memberHandler = new MemberHandler();
         boolean run = true;
         while(run)
@@ -22,11 +23,7 @@ public class TextUI {
                 }
                 case 3:
                 {
-                    memberHandler.fetchBestBrystsvoemning();
-                    memberHandler.fetchBestCrawlResultat();
-                    memberHandler.fetchBestButterflyResultat();
-                    memberHandler.fetchBestRygCrawlResultat();
-                    OutputHandler.printErrorWIP();
+                    memberHandler.getBestSwimmerData();
                     break;
                 }
                 case 4:
@@ -36,7 +33,7 @@ public class TextUI {
                 }
                 case 5:
                 {
-                    OutputHandler.printErrorWIP();
+                    memberHandler.printResidualMembers();
                     break;
                 }
                 case 6:

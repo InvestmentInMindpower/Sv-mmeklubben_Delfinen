@@ -1,3 +1,9 @@
+import java.io.File;
+import java.io.FileNotFoundException;
+import java.io.PrintStream;
+import java.lang.reflect.Array;
+import java.util.ArrayList;
+
 public class OutputHandler
 {
 
@@ -19,9 +25,10 @@ public class OutputHandler
         System.out.println("Enter a number from 1-10 to select from the menu");
         printWithSpacing4("1: Register new member");
         printWithSpacing4("2: Update member");
-        printWithSpacing4("3: Remove member");
+        printWithSpacing4("3: Print top 5 best swimmers for all disciplines");
         printWithSpacing4("4: Print all member information");
-        printWithSpacing4("5: Print all residual members");
+        printWithSpacing4("5: Print members with unpaid subscription fees");
+        printWithSpacing4("6: Add new Staevne data");
         printWithSpacing4("7: Receive payment");
         printWithSpacing4("8: Charge all members");
         printTextBoxEnd();
@@ -76,7 +83,61 @@ public class OutputHandler
         System.out.println("====================================================\n");
     }
 
+    public static void writeToMemberDataBase(ArrayList<Member> memberList, String memberFileName)
+    {
+        String finalString = "";
+        StringBuilder stringBuilder = new StringBuilder();
 
+        //build finalString that should be printed
+        for (int i = 0; i < memberList.size(); i++)
+        {
+            System.out.println(memberList.get(i).outputMembersToDatabase());
+            stringBuilder.append(memberList.get(i).outputMembersToDatabase());
+            stringBuilder.append(System.getProperty("line.separator"));
+        }
+
+        finalString = stringBuilder.toString();
+
+        PrintStream output = null;
+        try
+        {
+            output = new PrintStream(new File(memberFileName));
+        } catch(FileNotFoundException e)
+        {
+            throw new RuntimeException(e);
+        }
+
+        output.println(finalString);
+    }
+
+    public static void writeToStaevneDataBase(ArrayList<StaevneResultat> staevneResultatList, String staevneFileName)
+    {
+        String finalString = "";
+        String memberLine = "";
+
+        StringBuilder stringBuilder = new StringBuilder();
+
+        //build finalString that should be printed
+        for (int i = 0; i < staevneResultatList.size(); i++)
+        {
+            System.out.println(staevneResultatList.get(i).outputStaevneResultat());
+            stringBuilder.append(staevneResultatList.get(i).outputStaevneResultat());
+            stringBuilder.append(System.getProperty("line.separator"));
+        }
+
+        finalString = stringBuilder.toString();
+
+        PrintStream output = null;
+        try
+        {
+            output = new PrintStream(new File(staevneFileName));
+        } catch(FileNotFoundException e)
+        {
+            throw new RuntimeException(e);
+        }
+
+        output.println(finalString);
+    }
 
 
 }

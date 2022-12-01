@@ -11,16 +11,10 @@ public class Member implements MemberInterface
     private int debt;
     private int age;
 
-
-
     private double crawlResultat;
     private double brystsoevmningResultat;
     private double butterflyResultat;
     private double rygCrawlResultat;
-
-
-
-
 
     //creating constructors
     public Member(String swimmerType, String cpr, AgeGroup ageGroup, boolean membershipStatus, int subscriptionFee, int debt, int age)
@@ -36,21 +30,6 @@ public class Member implements MemberInterface
 
     }
     // constructor used to created from database
-    public Member(String swimmerType, String cpr, AgeGroup ageGroup, boolean membershipStatus, int subscriptionFee, int debt, int age, double crawlResultat, double brystsoevmningResultat, double butterflyResultat, double rygCrawlResultat)
-    {
-        this.swimmerType = swimmerType;
-        this.cpr = cpr;
-        this.ageGroup = ageGroup;
-        this.membershipStatus = membershipStatus;
-        this.subscriptionFee = subscriptionFee;
-        this.debt = debt;
-        this.age = age;
-        this.crawlResultat = crawlResultat;
-        this.brystsoevmningResultat = brystsoevmningResultat;
-        this.butterflyResultat = butterflyResultat;
-        this.rygCrawlResultat = rygCrawlResultat;
-
-    }
 
     //creating methods
 
@@ -102,10 +81,6 @@ public class Member implements MemberInterface
         return cpr + "," + ageGroup + "," + membershipStatus + "," + subscriptionFee + "," + debt + "," + age;
     }
 
-    public double getCrawlResultat()
-    {
-        return crawlResultat;
-    }
 
     public void setCrawlResultat(double crawlResultat)
     {
@@ -140,5 +115,9 @@ public class Member implements MemberInterface
     public void setRygCrawlResultat(double rygCrawlResultat)
     {
         this.rygCrawlResultat = rygCrawlResultat;
+    }
+
+    public double getCrawlResultat() {
+        return crawlResultat;
     }
 }
