@@ -23,8 +23,10 @@ public class Member implements MemberInterface
 
 
     //creating constructors
-    public Member(String cpr, AgeGroup ageGroup, boolean membershipStatus, int subscriptionFee, int debt, int age)
+    public Member(String swimmerType, String cpr, AgeGroup ageGroup, boolean membershipStatus, int subscriptionFee, int debt, int age)
     {
+
+        this.swimmerType = swimmerType;
         this.cpr = cpr;
         this.ageGroup = ageGroup;
         this.membershipStatus = membershipStatus;
@@ -95,7 +97,7 @@ public class Member implements MemberInterface
         return "CPR: " + cpr + "\nAgeGroup: " + ageGroup + "\nMembershipStatus: " + membershipStatus + "\nCrawlResultat: " + crawlResultat + "\nBrystResultat :" + brystsoevmningResultat + "\nButterflyResultat: " + butterflyResultat +"\nRygcrawlResultat: "+ rygCrawlResultat;
     }
 
-    public String outputMemberstoDatabase()
+    public String outputMembersToDatabase()
     {
         return cpr + "," + ageGroup + "," + membershipStatus + "," + subscriptionFee + "," + debt + "," + age;
     }

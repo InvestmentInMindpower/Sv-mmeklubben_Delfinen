@@ -1,0 +1,7 @@
+CompetitiveSwimmer,100619918888,Senior,true,1200,0,31,10.0,10.0,9999.0,9999.0,MortenTraener,true,true,false,false
+CompetitiveSwimmer,010120158888,Junior,true,1200,0,31,30.0,30.0,30.0,9999.0,MortenTraener,true,true,true,false
+CompetitiveSwimmer,100619008888,Senior,true,1200,0,31,40.0,40.0,9999.0,9999.0,MortenTraener,true,true,false,false
+241200008888,Senior,true,1200,0,2022
+010619558888,Senior,true,1200,0,2022
+011219858888,Senior,true,1200,0,2022
+

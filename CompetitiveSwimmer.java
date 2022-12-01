@@ -11,8 +11,8 @@ public class CompetitiveSwimmer extends Member
 
 
     // creating constructors
-    public CompetitiveSwimmer(String cpr, AgeGroup ageGroup, boolean membershipStatus, int subscriptionFee, int debt, int age, String trainer) {
-        super(cpr, ageGroup, membershipStatus, subscriptionFee, debt, age);
+    public CompetitiveSwimmer(String swimmerType, String cpr, AgeGroup ageGroup, boolean membershipStatus, int subscriptionFee, int debt, int age, String trainer) {
+        super(swimmerType, cpr, ageGroup, membershipStatus, subscriptionFee, debt, age);
         this.trainer = trainer;
     }
 

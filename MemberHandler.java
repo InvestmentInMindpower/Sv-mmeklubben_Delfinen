@@ -1,5 +1,4 @@
 import java.io.*;
-import java.security.cert.CollectionCertStoreParameters;
 import java.time.temporal.ChronoUnit;
 import java.util.ArrayList;
 import java.time.*;
@@ -12,7 +11,6 @@ public class MemberHandler
     ArrayList<StaevneResultat> staevneResultatList = new ArrayList<>();
 
     //booting system
-
     //create members from database
     //TODO Nicolai: Gør til Singleuse og alt det der.
     String memberPath = "members.txt";
@@ -170,7 +168,7 @@ public class MemberHandler
             int fee = calculateSubscriptionFee(ageGroup, cpr, active);
             int debt = 0;
             int age = castCPRToAge(cpr);
-            WorkoutSwimmer workoutSwimmer = new WorkoutSwimmer(cpr, ageGroup, active, fee, debt, age);
+            WorkoutSwimmer workoutSwimmer = new WorkoutSwimmer("WorkoutSwimmer", cpr, ageGroup, active, fee, debt, age);
             addToMemberList(workoutSwimmer);
         }
         else if(selection == 2)
@@ -184,7 +182,7 @@ public class MemberHandler
             int debt = 0;
             int age = castCPRToAge(cpr);
             String trainer = InputHandler.inputString();
-            CompetitiveSwimmer competitiveSwimmer = new CompetitiveSwimmer(cpr, ageGroup, active, fee, debt, age, trainer);
+            CompetitiveSwimmer competitiveSwimmer = new CompetitiveSwimmer("CompetetiveSwimmer", cpr, ageGroup, active, fee, debt, age, trainer);
             addToMemberList(competitiveSwimmer);
         }
 
@@ -368,8 +366,8 @@ public class MemberHandler
         //build finalString that should be printed
         for (int i = 0; i < memberList.size(); i++)
         {
-            System.out.println(memberList.get(i).outputMemberstoDatabase());
-            stringBuilder.append(memberList.get(i).outputMemberstoDatabase());
+            System.out.println(memberList.get(i).outputMembersToDatabase());
+            stringBuilder.append(memberList.get(i).outputMembersToDatabase());
             stringBuilder.append(System.getProperty("line.separator"));
         }
 
