@@ -27,4 +27,9 @@ public class CompetitiveSwimmer extends Member
         this.isRygcrawl = isRygcrawl;
     }
 
+    public String outputMembersToDatabase()
+    {
+        return super.getSwimmerType() + "," + super.getCpr() + "," + super.getAgeGroup() + "," + super.getMembershipStatus() + "," + super.getSubscriptionFee() + "," + super.getDebt() + "," + super.getAge() + "," + super.getCrawlResultat() + "," + super.getBrystsoevmningResultat() + "," + super.getButterflyResultat() + "," + super.getRygCrawlResultat() + "," + trainer + "," + isCrawl + "," + isBrystSvoemning + "," + isButterfly + "," + isRygcrawl;
+    }
+
 }

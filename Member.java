@@ -62,6 +62,8 @@ public class Member implements MemberInterface
         return membershipStatus;
     }
 
+    public String getSwimmerType() {return swimmerType;}
+
     public void setAgeGroup(AgeGroup ageGroup)
     {
         this.ageGroup = ageGroup;
@@ -70,6 +72,8 @@ public class Member implements MemberInterface
     {
         return ageGroup;
     }
+
+    public int getAge() {return age;}
     public void setMembershipStatus(boolean membershipStatus)
     {
         this.membershipStatus = membershipStatus;
@@ -79,6 +83,7 @@ public class Member implements MemberInterface
         return membershipStatus;
     }
 
+    public int getSubscriptionFee() {return subscriptionFee;}
     public int getDebt()
     {
         return debt;
