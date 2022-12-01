@@ -23,26 +23,6 @@ public class UserData
         InputHandler.InputStaeveneDataFromFile(staevneResultatList, staevnePath);
     }
 
-
-
-    public void fetchBestBrystsvoemning()
-    {
-        Collections.sort(memberList, new Comparator<Member>()
-        {
-            @Override
-            public int compare(Member o1, Member o2)
-            {
-                return Double.toString(o1.getBrystsoevmningResultat()).compareTo(Double.toString(o2.getBrystsoevmningResultat()));
-            }
-        });
-        System.out.println("Bedste tider for Brystsvoemning:");
-        for(int i=0; i<5; i++)
-        {
-
-            System.out.println(memberList.get(i).getCpr() +" "+ memberList.get(i).getBrystsoevmningResultat());
-        }
-    }
-
     public void outputToMemberDatabase()
     {
         String memberFileName = "membersTest.txt";
@@ -106,6 +86,24 @@ public class UserData
         {
 
             System.out.println(memberList.get(i).getCpr() +" "+ memberList.get(i).getRygCrawlResultat());
+        }
+    }
+
+    public void fetchBestBrystsvoemning()
+    {
+        Collections.sort(memberList, new Comparator<Member>()
+        {
+            @Override
+            public int compare(Member o1, Member o2)
+            {
+                return Double.toString(o1.getBrystsoevmningResultat()).compareTo(Double.toString(o2.getBrystsoevmningResultat()));
+            }
+        });
+        System.out.println("Bedste tider for Brystsvoemning:");
+        for(int i=0; i<5; i++)
+        {
+
+            System.out.println(memberList.get(i).getCpr() +" "+ memberList.get(i).getBrystsoevmningResultat());
         }
     }
 

@@ -173,7 +173,7 @@ public class MemberHandler
 
     public void getBestSwimmerData()
     {
-        userData.fetchBestBrystsvoemning();
+        userData.fetchBestCrawlResultat();
         userData.fetchBestButterflyResultat();
         userData.fetchBestRygCrawlResultat();
         userData.fetchBestBrystsvoemning();
