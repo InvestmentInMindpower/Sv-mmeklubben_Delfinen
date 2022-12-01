@@ -153,7 +153,6 @@ public class MemberHandler
 //TODO: make it so this is dependant on the number of members in memberList on startup
 
 
-
     public void CreateMember()
     {
         OutputHandler.printTextBoxStart();
@@ -201,6 +200,7 @@ public class MemberHandler
     {
         AgeGroup group;
         LocalDate dob = convertCprToLocalDate(cpr);
+
         int age = findAge(dob);
         System.out.println("You are: " + age);
         if(age >= 18)
