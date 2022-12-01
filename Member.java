@@ -3,6 +3,7 @@ public class Member implements MemberInterface
 {
    //declaring variables
 
+    String swimmerType;
     private String cpr;
     private AgeGroup ageGroup;
     private boolean membershipStatus;
@@ -10,12 +11,11 @@ public class Member implements MemberInterface
     private int debt;
     private int age;
 
+
+
     private double crawlResultat;
-
     private double brystsoevmningResultat;
-
     private double butterflyResultat;
-
     private double rygCrawlResultat;
 
 
@@ -33,8 +33,10 @@ public class Member implements MemberInterface
         this.age = age;
 
     }
-    public Member(String cpr, AgeGroup ageGroup, boolean membershipStatus, int subscriptionFee, int debt, int age, double crawlResultat, double brystsoevmningResultat, double butterflyResultat, double rygCrawlResultat)
+    // constructor used to created from database
+    public Member(String swimmerType, String cpr, AgeGroup ageGroup, boolean membershipStatus, int subscriptionFee, int debt, int age, double crawlResultat, double brystsoevmningResultat, double butterflyResultat, double rygCrawlResultat)
     {
+        this.swimmerType = swimmerType;
         this.cpr = cpr;
         this.ageGroup = ageGroup;
         this.membershipStatus = membershipStatus;

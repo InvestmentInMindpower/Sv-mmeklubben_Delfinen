@@ -1,6 +1,6 @@
-100619918888,Senior,true,1200,0,31,30,30,30,30
-241200008888,Senior,true,1200,0,2022,40,40,40,40
-121212128888,Senior,true,1200,0,21,50,50,50,50
-281220038888,Senior,false,600,0,20,20,20,20,20
-160819469898,Senior,true,1200,0,42,88,88,88,88
-241019922972,Senior,true,1200,0,30,74,74,74,74
+CompetitiveSwimmer,100619918888,Senior,True,1200,0,31,10,10,9999,9999,MortenTraener,true,true,false,false,
+CompetitiveSwimmer,010120158888,Junior,True,1200,0,31,30,30,30,9999,MortenTraener,true,true,true,false,
+CompetitiveSwimmer,100619008888,Senior,True,1200,0,31,40,40,9999,9999,MortenTraener,true,true,false,false,
+WorkoutSwimmer,241200008888,Senior,true,1200,0,2022,20,20,9999,9999
+WorkoutSwimmer,010619558888,Senior,true,1200,0,2022,50,50,9999,9999
+WorkoutSwimmer,011219858888,Senior,true,1200,0,2022,20,20,9999,9999

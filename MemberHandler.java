@@ -14,6 +14,7 @@ public class MemberHandler
     //booting system
 
     //create members from database
+    //TODO Nicolai: Gør til Singleuse og alt det der.
     String memberPath = "members.txt";
     String memberLine = "";
     BufferedReader br;
@@ -24,7 +25,20 @@ public class MemberHandler
             {
 
                 String[] values = memberLine.split(",");
-                memberList.add(new Member(values[0],AgeGroup.valueOf(values[1]), Boolean.parseBoolean(values[2]), Integer.parseInt(values[3]), Integer.parseInt(values[4]), Integer.parseInt(values[5]), Double.parseDouble(values[6]), Double.parseDouble(values[7]), Double.parseDouble(values[8]), Double.parseDouble(values[9])));
+
+                if(values[0].equals("WorkoutSwimmer"))
+                {
+                    //TODO Write constructor for WorkoutSwimmer
+                    memberList.add(new WorkoutSwimmer(values[0], values[1], AgeGroup.valueOf(values[2]), Boolean.parseBoolean(values[3]), Integer.parseInt(values[4]), Integer.parseInt(values[5]), Integer.parseInt(values[6]), Double.parseDouble(values[7]), Double.parseDouble(values[8]), Double.parseDouble(values[9]), Double.parseDouble(values[10])));
+                    //System.out.println("I am a WorkoutSwimmer!");
+                } else if(values[0].equals("CompetitiveSwimmer"))
+                {
+                    //TODO Write constructor for CompetitiveSwimmer
+                    memberList.add(new CompetitiveSwimmer(values[0], values[1], AgeGroup.valueOf(values[2]), Boolean.parseBoolean(values[3]), Integer.parseInt(values[4]), Integer.parseInt(values[5]), Integer.parseInt(values[6]), Double.parseDouble(values[7]), Double.parseDouble(values[8]), Double.parseDouble(values[9]), Double.parseDouble(values[10]), values[11], Boolean.parseBoolean(values[12]), Boolean.parseBoolean(values[13]), Boolean.parseBoolean(values[14]), Boolean.parseBoolean(values[15])));
+                    //System.out.println("I am a CompetitiveSwimmer!");
+                }
+
+                //memberList.add(new Member(values[0],AgeGroup.valueOf(values[1]), Boolean.parseBoolean(values[2]), Integer.parseInt(values[3]), Integer.parseInt(values[4]), Integer.parseInt(values[5]), Double.parseDouble(values[6]), Double.parseDouble(values[7]), Double.parseDouble(values[8]), Double.parseDouble(values[9])));
                 System.out.println("Number of members: " + memberList.size());
             }
         } catch (FileNotFoundException e) {
@@ -38,6 +52,7 @@ public class MemberHandler
 
 
     //create staevneresultater from database
+    //TODO Nicolai: Gør til single use
     String staevnePath = "staevneresultater.txt";
     String staevneLine = "";
     //BufferedReader brb;
@@ -340,7 +355,9 @@ public class MemberHandler
         System.out.println(member.toString());
     }
 
+
     //output memberList to database
+    //TODO: Nicolai, fix IKKE endnu
     public void outputToMemberDatabase()
     {
         String memberFileName = "membersTest.txt";
