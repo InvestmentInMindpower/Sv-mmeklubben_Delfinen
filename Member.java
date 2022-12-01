@@ -36,7 +36,7 @@ public class Member implements MemberInterface
 
     }
     // constructor used to created from database
-    public Member(String swimmerType, String cpr, AgeGroup ageGroup, boolean membershipStatus, int subscriptionFee, int debt, int age, double crawlResultat, double brystsoevmningResultat, double butterflyResultat, double rygCrawlResultat)
+    public Member(String swimmerType, String cpr, AgeGroup ageGroup, boolean membershipStatus, int subscriptionFee, int debt, int age)
     {
         this.swimmerType = swimmerType;
         this.cpr = cpr;
@@ -45,11 +45,6 @@ public class Member implements MemberInterface
         this.subscriptionFee = subscriptionFee;
         this.debt = debt;
         this.age = age;
-        this.crawlResultat = crawlResultat;
-        this.brystsoevmningResultat = brystsoevmningResultat;
-        this.butterflyResultat = butterflyResultat;
-        this.rygCrawlResultat = rygCrawlResultat;
-
     }
 
     //creating methods

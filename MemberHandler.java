@@ -1,4 +1,5 @@
 import java.io.*;
+import java.security.cert.CollectionCertStoreParameters;
 import java.time.temporal.ChronoUnit;
 import java.util.ArrayList;
 import java.time.*;
@@ -7,10 +8,19 @@ import java.util.Comparator;
 
 public class MemberHandler
 {
-    ArrayList<Member> memberList = new ArrayList<>();
-    ArrayList<StaevneResultat> staevneResultatList = new ArrayList<>();
+    ArrayList<Member> memberList;
 
+    UserData userData;
+    ArrayList<StaevneResultat> staevneResultatList;
+
+    public MemberHandler() throws FileNotFoundException {
+        this.memberList = new ArrayList<>();
+        this.staevneResultatList = new ArrayList<>();
+        this.userData = new UserData(memberList, staevneResultatList);
+        userData.bootUserData();
+    }
     //booting system
+
     //create members from database
     //TODO Nicolai: Gør til Singleuse og alt det der.
     String memberPath = "members.txt";
@@ -75,81 +85,8 @@ public class MemberHandler
 
     //booting complete
 
-    public void fetchBestBrystsvoemning()
-    {
-        Collections.sort(memberList, new Comparator<Member>()
-        {
-            @Override
-            public int compare(Member o1, Member o2)
-            {
-                return Double.toString(o1.getBrystsoevmningResultat()).compareTo(Double.toString(o2.getBrystsoevmningResultat()));
-            }
-        });
-            System.out.println("Bedste tider for Brystsvoemning:");
-        for(int i=0; i<5; i++)
-        {
-
-            System.out.println(memberList.get(i).getCpr() +" "+ memberList.get(i).getBrystsoevmningResultat());
-        }
-    }
-
-
-    public void fetchBestCrawlResultat()
-    {
-        Collections.sort(memberList, new Comparator<Member>()
-        {
-            @Override
-            public int compare(Member o1, Member o2)
-            {
-                return Double.toString(o1.getCrawlResultat()).compareTo(Double.toString(o2.getCrawlResultat()));
-            }
-        });
-            System.out.println("Bedste tider for Crawlsvoemning:");
-            for(int i=0; i<5; i++)
-            {
-
-                System.out.println(memberList.get(i).getCpr() +" "+ memberList.get(i).getCrawlResultat());
-            }
-    }
-
-    public void fetchBestButterflyResultat()
-    {
-        Collections.sort(memberList, new Comparator<Member>()
-        {
-            @Override
-            public int compare(Member o1, Member o2)
-            {
-                return Double.toString(o1.getButterflyResultat()).compareTo(Double.toString(o2.getButterflyResultat()));
-            }
-        });
-        System.out.println("Bedste tider for Butterflysvoemning:");
-        for(int i=0; i<5; i++)
-        {
-
-            System.out.println(memberList.get(i).getCpr() +" "+ memberList.get(i).getButterflyResultat());
-        }
-    }
-
-    public void fetchBestRygCrawlResultat()
-    {
-        Collections.sort(memberList, new Comparator<Member>()
-        {
-            @Override
-            public int compare(Member o1, Member o2)
-            {
-                return Double.toString(o1.getRygCrawlResultat()).compareTo(Double.toString(o2.getRygCrawlResultat()));
-            }
-        });System.out.println("Bedste tider for Rygcrawlsvoemning:");
-        for(int i=0; i<5; i++)
-        {
-
-            System.out.println(memberList.get(i).getCpr() +" "+ memberList.get(i).getRygCrawlResultat());
-        }
-    }
-
 
 //TODO: make it so this is dependant on the number of members in memberList on startup
-
 
 
     public void CreateMember()
@@ -169,6 +106,7 @@ public class MemberHandler
             int debt = 0;
             int age = castCPRToAge(cpr);
             WorkoutSwimmer workoutSwimmer = new WorkoutSwimmer("WorkoutSwimmer", cpr, ageGroup, active, fee, debt, age);
+            userData.outputToMemberDatabase();
             addToMemberList(workoutSwimmer);
         }
         else if(selection == 2)
@@ -183,6 +121,7 @@ public class MemberHandler
             int age = castCPRToAge(cpr);
             String trainer = InputHandler.inputString();
             CompetitiveSwimmer competitiveSwimmer = new CompetitiveSwimmer("CompetetiveSwimmer", cpr, ageGroup, active, fee, debt, age, trainer);
+            userData.outputToMemberDatabase();
             addToMemberList(competitiveSwimmer);
         }
 
@@ -199,6 +138,7 @@ public class MemberHandler
     {
         AgeGroup group;
         LocalDate dob = convertCprToLocalDate(cpr);
+
         int age = findAge(dob);
         System.out.println("You are: " + age);
         if(age >= 18)
@@ -225,9 +165,6 @@ public class MemberHandler
         int day =  Integer.parseInt(cpr.substring(0, 2));
         int month = Integer.parseInt(cpr.substring(2, 4));
         int year = Integer.parseInt(cpr.substring(4, 8));
-        System.out.println("day: " + day);
-        System.out.println("month: " + month);
-        System.out.println("year: " + year);
         //Assembles date format of the cpr YYYY-MM-DD
         LocalDate dob = LocalDate.of(year, month, day);
         return dob;
@@ -294,6 +231,14 @@ public class MemberHandler
         return fee;
     }
 
+    public void getBestSwimmerData()
+    {
+        userData.fetchBestBrystsvoemning();
+        userData.fetchBestButterflyResultat();
+        userData.fetchBestRygCrawlResultat();
+        userData.fetchBestBrystsvoemning();
+    }
+
     public void payDebt(String cpr)
     {
         for(Member member : memberList)
@@ -356,63 +301,9 @@ public class MemberHandler
 
     //output memberList to database
     //TODO: Nicolai, fix IKKE endnu
-    public void outputToMemberDatabase()
-    {
-        String memberFileName = "membersTest.txt";
-        String memberLine = "";
-        String finalString = "";
-        StringBuilder stringBuilder = new StringBuilder();
 
-        //build finalString that should be printed
-        for (int i = 0; i < memberList.size(); i++)
-        {
-            System.out.println(memberList.get(i).outputMembersToDatabase());
-            stringBuilder.append(memberList.get(i).outputMembersToDatabase());
-            stringBuilder.append(System.getProperty("line.separator"));
-        }
 
-        finalString = stringBuilder.toString();
 
-        PrintStream output = null;
-        try
-        {
-            output = new PrintStream(new File(memberFileName));
-        } catch(FileNotFoundException e)
-        {
-            throw new RuntimeException(e);
-        }
-
-        output.println(finalString);
-    }
-
-    public void outputToStaevneResultatDatabase()
-    {
-        String memberFileName = "staevneResultatTest.txt";
-        String memberLine = "";
-        String finalString = "";
-        StringBuilder stringBuilder = new StringBuilder();
-
-        //build finalString that should be printed
-        for (int i = 0; i < staevneResultatList.size(); i++)
-        {
-            System.out.println(staevneResultatList.get(i).outputStaevneResultat());
-            stringBuilder.append(staevneResultatList.get(i).outputStaevneResultat());
-            stringBuilder.append(System.getProperty("line.separator"));
-        }
-
-        finalString = stringBuilder.toString();
-
-        PrintStream output = null;
-        try
-        {
-            output = new PrintStream(new File(memberFileName));
-        } catch(FileNotFoundException e)
-        {
-            throw new RuntimeException(e);
-        }
-
-        output.println(finalString);
-    }
 
 
 
