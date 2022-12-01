@@ -91,8 +91,8 @@ public class OutputHandler
         //build finalString that should be printed
         for (int i = 0; i < memberList.size(); i++)
         {
-            System.out.println(memberList.get(i).outputMemberstoDatabase());
-            stringBuilder.append(memberList.get(i).outputMemberstoDatabase());
+            System.out.println(memberList.get(i).outputMembersToDatabase());
+            stringBuilder.append(memberList.get(i).outputMembersToDatabase());
             stringBuilder.append(System.getProperty("line.separator"));
         }
 
