@@ -123,7 +123,7 @@ public class MemberHandler
         });
         for(int i=0; i<5; i++)
         {
-            System.out.println(memberList.get(i).getCpr() +" "+ memberList.get(i).getButterflyResultat());
+            System.out.println(memberList.get(i).getCpr() +" "+ memberList.get(i).getRygCrawlResultat());
         }
     }
 
