@@ -63,11 +63,7 @@ public class UserData
             @Override
             public int compare(Member o1, Member o2)
             {
-                if(o1 instanceof CompetitiveSwimmer && o2 instanceof CompetitiveSwimmer)
-                {
-                    return Double.toString(((CompetitiveSwimmer) o1).getCrawlResultat()).compareTo(Double.toString(((CompetitiveSwimmer) o2).getCrawlResultat()));
-                }
-                else return 0;
+                return Double.toString(o1.getCrawlResultat()).compareTo(Double.toString(o2.getCrawlResultat()));
             }
         });
         System.out.println("Bedste tider for Crawlsvoemning:");
