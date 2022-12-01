@@ -23,10 +23,7 @@ public class TextUI {
                 }
                 case 3:
                 {
-                    memberHandler.fetchBestBrystsvoemning();
-                    memberHandler.fetchBestCrawlResultat();
-                    memberHandler.fetchBestButterflyResultat();
-                    memberHandler.fetchBestRygCrawlResultat();
+                    memberHandler.getBestSwimmerData();
                     OutputHandler.printErrorWIP();
                     break;
                 }

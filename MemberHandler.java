@@ -9,6 +9,8 @@ import java.util.Comparator;
 public class MemberHandler
 {
     ArrayList<Member> memberList = new ArrayList<>();
+
+    UserData userData = new UserData(memberList);
     ArrayList<StaevneResultat> staevneResultatList = new ArrayList<>();
 
     //booting system
@@ -29,7 +31,7 @@ public class MemberHandler
                 if(values[0].equals("WorkoutSwimmer"))
                 {
                     //TODO Write constructor for WorkoutSwimmer
-                    memberList.add(new WorkoutSwimmer(values[0], values[1], AgeGroup.valueOf(values[2]), Boolean.parseBoolean(values[3]), Integer.parseInt(values[4]), Integer.parseInt(values[5]), Integer.parseInt(values[6]), Double.parseDouble(values[7]), Double.parseDouble(values[8]), Double.parseDouble(values[9]), Double.parseDouble(values[10])));
+                    memberList.add(new WorkoutSwimmer(values[0], values[1], AgeGroup.valueOf(values[2]), Boolean.parseBoolean(values[3]), Integer.parseInt(values[4]), Integer.parseInt(values[5]), Integer.parseInt(values[6])));
                     //System.out.println("I am a WorkoutSwimmer!");
                 } else if(values[0].equals("CompetitiveSwimmer"))
                 {
@@ -77,77 +79,7 @@ public class MemberHandler
 
     //booting complete
 
-    public void fetchBestBrystsvoemning()
-    {
-        Collections.sort(memberList, new Comparator<Member>()
-        {
-            @Override
-            public int compare(Member o1, Member o2)
-            {
-                return Double.toString(o1.getBrystsoevmningResultat()).compareTo(Double.toString(o2.getBrystsoevmningResultat()));
-            }
-        });
-            System.out.println("Bedste tider for Brystsvoemning:");
-        for(int i=0; i<5; i++)
-        {
 
-            System.out.println(memberList.get(i).getCpr() +" "+ memberList.get(i).getBrystsoevmningResultat());
-        }
-    }
-
-
-    public void fetchBestCrawlResultat()
-    {
-        Collections.sort(memberList, new Comparator<Member>()
-        {
-            @Override
-            public int compare(Member o1, Member o2)
-            {
-                return Double.toString(o1.getCrawlResultat()).compareTo(Double.toString(o2.getCrawlResultat()));
-            }
-        });
-            System.out.println("Bedste tider for Crawlsvoemning:");
-            for(int i=0; i<5; i++)
-            {
-
-                System.out.println(memberList.get(i).getCpr() +" "+ memberList.get(i).getCrawlResultat());
-            }
-    }
-
-    public void fetchBestButterflyResultat()
-    {
-        Collections.sort(memberList, new Comparator<Member>()
-        {
-            @Override
-            public int compare(Member o1, Member o2)
-            {
-                return Double.toString(o1.getButterflyResultat()).compareTo(Double.toString(o2.getButterflyResultat()));
-            }
-        });
-        System.out.println("Bedste tider for Butterflysvoemning:");
-        for(int i=0; i<5; i++)
-        {
-
-            System.out.println(memberList.get(i).getCpr() +" "+ memberList.get(i).getButterflyResultat());
-        }
-    }
-
-    public void fetchBestRygCrawlResultat()
-    {
-        Collections.sort(memberList, new Comparator<Member>()
-        {
-            @Override
-            public int compare(Member o1, Member o2)
-            {
-                return Double.toString(o1.getRygCrawlResultat()).compareTo(Double.toString(o2.getRygCrawlResultat()));
-            }
-        });System.out.println("Bedste tider for Rygcrawlsvoemning:");
-        for(int i=0; i<5; i++)
-        {
-
-            System.out.println(memberList.get(i).getCpr() +" "+ memberList.get(i).getRygCrawlResultat());
-        }
-    }
 
 
 //TODO: make it so this is dependant on the number of members in memberList on startup
@@ -294,6 +226,14 @@ public class MemberHandler
            fee = fee + 500;
         }
         return fee;
+    }
+
+    public void getBestSwimmerData()
+    {
+        userData.fetchBestBrystsvoemning();
+        userData.fetchBestButterflyResultat();
+        userData.fetchBestRygCrawlResultat();
+        userData.fetchBestBrystsvoemning();
     }
 
     public void payDebt(String cpr)
