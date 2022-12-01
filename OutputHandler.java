@@ -41,6 +41,7 @@ public class OutputHandler
         printWithSpacing4("1: Change Member type");
         printWithSpacing4("2: Change Member AgeGroup");
         printWithSpacing4("3: Change membership Status");
+        printWithSpacing4("4: Sign up for, or change diciplines");
         printTextBoxEnd();
     }
 

@@ -25,21 +25,27 @@ public class TextUI {
                     {
                         case 1:
                         {
-                            //change membership type method
+                            //TODO: make a change membership type method
                             //remember that this will change subscription fee and possibly remove staevneresults
                             OutputHandler.printErrorWIP();
                             break;
                         }
                         case 2:
                         {
-                            //change membership ageGroup method
+                            //TODO: make a change membership AgeGroup method
                             OutputHandler.printErrorWIP();
                             break;
                         }
                         case 3:
                         {
-                            //Change membership passive/active method
+                            //TODO: make a Change membership passive/active method
                             //remember this will change subscription fee for member
+                            OutputHandler.printErrorWIP();
+                            break;
+                        }
+                        case 4:
+                        {
+                            //TODO: make a sign up to a dicipline method which asks for each dicipline type
                             OutputHandler.printErrorWIP();
                             break;
                         }
