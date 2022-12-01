@@ -23,8 +23,10 @@ public class Member implements MemberInterface
 
 
     //creating constructors
-    public Member(String cpr, AgeGroup ageGroup, boolean membershipStatus, int subscriptionFee, int debt, int age)
+    public Member(String swimmerType, String cpr, AgeGroup ageGroup, boolean membershipStatus, int subscriptionFee, int debt, int age)
     {
+
+        this.swimmerType = swimmerType;
         this.cpr = cpr;
         this.ageGroup = ageGroup;
         this.membershipStatus = membershipStatus;
@@ -62,6 +64,8 @@ public class Member implements MemberInterface
         return membershipStatus;
     }
 
+    public String getSwimmerType() {return swimmerType;}
+
     public void setAgeGroup(AgeGroup ageGroup)
     {
         this.ageGroup = ageGroup;
@@ -70,6 +74,8 @@ public class Member implements MemberInterface
     {
         return ageGroup;
     }
+
+    public int getAge() {return age;}
     public void setMembershipStatus(boolean membershipStatus)
     {
         this.membershipStatus = membershipStatus;
@@ -79,6 +85,7 @@ public class Member implements MemberInterface
         return membershipStatus;
     }
 
+    public int getSubscriptionFee() {return subscriptionFee;}
     public int getDebt()
     {
         return debt;
@@ -90,7 +97,7 @@ public class Member implements MemberInterface
         return "CPR: " + cpr + "\nAgeGroup: " + ageGroup + "\nMembershipStatus: " + membershipStatus + "\nCrawlResultat: " + crawlResultat + "\nBrystResultat :" + brystsoevmningResultat + "\nButterflyResultat: " + butterflyResultat +"\nRygcrawlResultat: "+ rygCrawlResultat;
     }
 
-    public String outputMemberstoDatabase()
+    public String outputMembersToDatabase()
     {
         return cpr + "," + ageGroup + "," + membershipStatus + "," + subscriptionFee + "," + debt + "," + age;
     }

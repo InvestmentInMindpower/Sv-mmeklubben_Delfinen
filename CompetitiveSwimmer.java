@@ -11,8 +11,8 @@ public class CompetitiveSwimmer extends Member
 
 
     // creating constructors
-    public CompetitiveSwimmer(String cpr, AgeGroup ageGroup, boolean membershipStatus, int subscriptionFee, int debt, int age, String trainer) {
-        super(cpr, ageGroup, membershipStatus, subscriptionFee, debt, age);
+    public CompetitiveSwimmer(String swimmerType, String cpr, AgeGroup ageGroup, boolean membershipStatus, int subscriptionFee, int debt, int age, String trainer) {
+        super(swimmerType, cpr, ageGroup, membershipStatus, subscriptionFee, debt, age);
         this.trainer = trainer;
     }
 
@@ -25,6 +25,11 @@ public class CompetitiveSwimmer extends Member
         this.isBrystSvoemning = isBrystSvoemning;
         this.isButterfly = isButterfly;
         this.isRygcrawl = isRygcrawl;
+    }
+
+    public String outputMembersToDatabase()
+    {
+        return super.getSwimmerType() + "," + super.getCpr() + "," + super.getAgeGroup() + "," + super.getMembershipStatus() + "," + super.getSubscriptionFee() + "," + super.getDebt() + "," + super.getAge() + "," + super.getCrawlResultat() + "," + super.getBrystsoevmningResultat() + "," + super.getButterflyResultat() + "," + super.getRygCrawlResultat() + "," + trainer + "," + isCrawl + "," + isBrystSvoemning + "," + isButterfly + "," + isRygcrawl;
     }
 
 }

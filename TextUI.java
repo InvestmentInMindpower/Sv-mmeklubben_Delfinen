@@ -13,7 +13,6 @@ public class TextUI {
                 case 1:
                 {
                     memberHandler.CreateMember();
-                    memberHandler.outputToMemberDatabase();
                     break;
                 }
                 case 2:
