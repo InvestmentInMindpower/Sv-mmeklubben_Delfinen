@@ -3,6 +3,8 @@ public class Member
 {
    //declaring variables
 
+
+
     String swimmerType;
     private String cpr;
     private AgeGroup ageGroup;
@@ -37,6 +39,10 @@ public class Member
     {
         return cpr;
     }
+
+    public void setCpr(String cpr) { this.cpr = cpr;}
+
+    public void setSwimmerType(String swimmerType) {this.swimmerType = swimmerType;}
 
     public boolean isMembershipStatus()
     {
