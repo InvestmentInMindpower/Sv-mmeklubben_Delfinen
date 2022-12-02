@@ -302,10 +302,10 @@ public class MemberHandler
 
     public void printTournamentStatementForMember()
     {
-        String inputCPR = "100619918888";
+        String inputCPR = InputHandler.inputCPR();
         for(StaevneResultat staevneResultat : staevneResultatList)
         {
-            if(staevneResultat.getCPR().equals("100619918888"))
+            if(staevneResultat.getCPR().equals(inputCPR))
             {
                 System.out.println(staevneResultat);
             }
