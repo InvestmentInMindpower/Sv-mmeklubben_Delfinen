@@ -294,6 +294,12 @@ public class MemberHandler implements MemberHandlerInterface
         }
     }
 
+    public void createMemberTournamentInfo(String cpr, String swimType, String lokation, int placering, double tid )
+    {
+        StaevneResultat staevneResultat = new StaevneResultat(cpr, swimType, lokation, placering, tid);
+        staevneResultatList.add(staevneResultat);
+    }
+
 
     public void addToMemberList(Member member)
     {

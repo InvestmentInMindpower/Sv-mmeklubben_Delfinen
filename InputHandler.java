@@ -77,7 +77,7 @@ public class InputHandler
                 {
 
                     String[] values = staevneLine.split(",");
-                    staevneResultatList.add(new StaevneResultat(values[0], values[1], Integer.parseInt(values[2]), Double.parseDouble(values[3])));
+                    staevneResultatList.add(new StaevneResultat(values[0], values[1], values[2], Integer.parseInt(values[3]), Double.parseDouble(values[4])));
                     //System.out.println("Number of members: " + staevneResultatList.size());
                     //System.out.println(staevneResultatList.get(staevneResultatList.size()-1).outputStaevneResultat());
 
@@ -213,6 +213,12 @@ public class InputHandler
     public static int inputInt()
     {
         int input = globalInput.nextInt();
+        return input;
+    }
+
+    public static double inputDouble()
+    {
+        double input = globalInput.nextDouble();
         return input;
     }
 

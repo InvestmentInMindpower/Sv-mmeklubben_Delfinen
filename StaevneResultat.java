@@ -5,9 +5,10 @@ public class StaevneResultat {
     String lokation;
     int placering;
     double tid;
+    String swimType;
 
     //creating constructors
-    public StaevneResultat(String cpr, String lokation, int placering, double tid)
+    public StaevneResultat(String cpr, String swimType, String lokation, int placering, double tid)
     {
         this.cpr = cpr;
         this.lokation = lokation;
@@ -22,7 +23,7 @@ public class StaevneResultat {
 
     public String outputStaevneResultat()
     {
-        return cpr + "," + lokation + "," + placering + "," + tid;
+        return cpr + "," + swimType + "," + lokation + "," + placering + "," + tid;
     }
 
     public String getCPR()
