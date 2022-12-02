@@ -47,7 +47,7 @@ public class OutputHandler
     public static void printTextUIMenuSwimDiscipline()
     {
         printTextBoxStart();
-        System.out.println("Choose which Discipline to Sign up for");
+        System.out.println("Choose Which Discipline To Change");
         printWithSpacing4("1: Crawl");
         printWithSpacing4("2: Brystsvoemning");
         printWithSpacing4("3: Butterflysvoemning");

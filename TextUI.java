@@ -48,28 +48,25 @@ public class TextUI {
                             {
                                 case 1:
                                 {
-                                    OutputHandler.printGenericErrorText();
+                                    memberHandler.updateSwimDisciplineCrawl();
                                     break;
                                 }
                                 case 2:
                                 {
-                                    OutputHandler.printGenericErrorText();
+                                    memberHandler.updateSwimDisciplineBrystSvoemning();
                                     break;
                                 }
                                 case 3:
                                 {
-                                    OutputHandler.printGenericErrorText();
+                                    memberHandler.updateSwimDisciplineButterflySvoemning();
                                     break;
                                 }
                                 case 4:
                                 {
-                                    OutputHandler.printGenericErrorText();
+                                    memberHandler.updateSwimDisciplineRygcrawl();
                                     break;
                                 }
                             }
-
-                            //TODO: make a sign up to a dicipline method which asks for each dicipline type
-
                             break;
                         }
                     }

@@ -4,15 +4,55 @@ public class CompetitiveSwimmer extends Member
 {
     // creating variables
     private String trainer;
+
+    public boolean getIsCrawl()
+    {
+        return isCrawl;
+    }
+
     private boolean isCrawl;
+
+    public boolean getIsBrystSvoemning()
+    {
+        return isBrystSvoemning;
+    }
+
     private boolean isBrystSvoemning;
+
+    public boolean getIsButterfly()
+    {
+        return isButterfly;
+    }
+
     private boolean isButterfly;
+
+    public boolean getIsRygcrawl()
+    {
+        return isRygcrawl;
+    }
+
     private boolean isRygcrawl;
     private double crawlResultat;
     private double brystsoevmningResultat;
     private double butterflyResultat;
     private double rygCrawlResultat;
 
+    public void setCrawl(boolean crawl)
+{
+    isCrawl = crawl;
+}
+    public void setBrystSvoemning(boolean brystSvoemning)
+    {
+        isBrystSvoemning = brystSvoemning;
+    }
+    public void setButterfly(boolean butterfly)
+{
+    isButterfly = butterfly;
+}
+    public void setRygcrawl(boolean rygcrawl)
+    {
+        isRygcrawl = rygcrawl;
+    }
 
     // creating constructors
     public CompetitiveSwimmer(String swimmerType, String cpr, AgeGroup ageGroup, boolean membershipStatus, int subscriptionFee, int debt, int age, String trainer)

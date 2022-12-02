@@ -228,15 +228,102 @@ public class MemberHandler
         userData.fetchBestBrystsvoemning();
     }
 
-    public void updateSwimDiscipline()
+    public void updateSwimDisciplineCrawl()
     {
-        OutputHandler.printTextBoxStart();
-        System.out.println("Please Enter The Cpr Number Of the Member Signing Up");
-        OutputHandler.printTextBoxEnd();
-        Member member = findMember();
+        String cpr = InputHandler.inputCPR();
 
+        for(Member member : memberList)
+        {
+            if(member instanceof CompetitiveSwimmer)
+            {
+                if (member.getCpr().equals(cpr))
+                {
+                    if(((CompetitiveSwimmer) member).getIsCrawl() == true)
+                    {
+                        ((CompetitiveSwimmer) member).setCrawl(false);
+                        System.out.println("Changed To: false");
+                    } else if (((CompetitiveSwimmer) member).getIsCrawl() == false)
+                    {
+                        ((CompetitiveSwimmer) member).setCrawl(true);
+                        System.out.println("Changed To: true");
+                    }
+                }
+            }
+        }
+        userData.outputToMemberDatabase();
+    }
+    public void updateSwimDisciplineBrystSvoemning()
+    {
+        String cpr = InputHandler.inputCPR();
 
+        for(Member member : memberList)
+        {
+            if(member instanceof CompetitiveSwimmer)
+            {
+                if(member.getCpr().equals(cpr))
+                {
+                    if(((CompetitiveSwimmer) member).getIsBrystSvoemning() == true)
+                    {
+                        ((CompetitiveSwimmer) member).setBrystSvoemning(false);
+                        System.out.println("Changed To: False");
+                    }else if (((CompetitiveSwimmer) member).getIsBrystSvoemning() == false)
+                    {
+                        ((CompetitiveSwimmer) member).setBrystSvoemning(true);
+                        System.out.println("Changed To: True");
+                    }
+                }
+            }
+        }
+        userData.outputToMemberDatabase();
+    }
+    public void updateSwimDisciplineButterflySvoemning()
+    {
+        String cpr = InputHandler.inputCPR();
 
+        for(Member member : memberList)
+        {
+            if(member instanceof CompetitiveSwimmer)
+            {
+                if(member.getCpr().equals(cpr))
+                {
+                    if(((CompetitiveSwimmer) member).getIsButterfly() == true)
+                    {
+                        ((CompetitiveSwimmer) member).setButterfly(false);
+                        System.out.println("Changed To: False");
+                    }else if (((CompetitiveSwimmer) member).getIsButterfly() == false)
+                    {
+                        ((CompetitiveSwimmer) member).setButterfly(true);
+                        System.out.println("Changed To: True");
+                    }
+                }
+            }
+        }
+        userData.outputToMemberDatabase();
+    }
+
+    public void updateSwimDisciplineRygcrawl()
+    {
+        String cpr = InputHandler.inputCPR();
+
+        for(Member member : memberList)
+        {
+            if(member instanceof CompetitiveSwimmer)
+            {
+                if(member.getCpr().equals(cpr))
+                {
+                    if(((CompetitiveSwimmer) member).getIsRygcrawl() == true)
+                    {
+                        ((CompetitiveSwimmer) member).setRygcrawl(false);
+                        System.out.println("Changed To: False");
+                    }else if (((CompetitiveSwimmer) member).getIsRygcrawl() == false)
+                    {
+                        ((CompetitiveSwimmer) member).setRygcrawl(true);
+                        System.out.println("Changed To: True");
+                    }
+                }
+            }
+        }
+        userData.outputToMemberDatabase();
     }
     public void payDebt(String cpr)
     {
