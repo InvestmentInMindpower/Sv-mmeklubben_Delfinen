@@ -70,19 +70,19 @@ public class TextUI {
                                 switch(disciplineChoice)
                                 {
                                     case 1: {
-                                        OutputHandler.printGenericErrorText();
+                                        memberHandler.updateSwimDisciplineCrawl();
                                         break;
                                     }
                                     case 2: {
-                                        OutputHandler.printGenericErrorText();
+                                        memberHandler.updateSwimDisciplineBrystSvoemning();
                                         break;
                                     }
                                     case 3: {
-                                        OutputHandler.printGenericErrorText();
+                                        memberHandler.updateSwimDisciplineButterflySvoemning();
                                         break;
                                     }
                                     case 4: {
-                                        OutputHandler.printGenericErrorText();
+                                        memberHandler.updateSwimDisciplineRygcrawl();
                                         break;
                                     }
                                 }
