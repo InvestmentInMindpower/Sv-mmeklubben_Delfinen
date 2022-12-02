@@ -6,7 +6,7 @@ public interface MemberHandlerInterface
     public int findAge(LocalDate dob);
     public Member findMember();
 
-    public void PrintAllMemberInformation();
+    public void PrintMemberInformation();
 
     public void chargeMembers();
 

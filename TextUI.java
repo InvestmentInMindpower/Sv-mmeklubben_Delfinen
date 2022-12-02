@@ -111,7 +111,7 @@ public class TextUI {
                 {
                     if(permissions[choice])
                     {
-                        memberHandler.PrintAllMemberInformation();
+                        memberHandler.PrintMemberInformation();
                     }
                     else
                     {

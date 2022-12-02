@@ -129,7 +129,7 @@ public class MemberHandler implements MemberHandlerInterface
         }
         return null;
     }
-    public void PrintAllMemberInformation()
+    public void PrintMemberInformation()
     {
         Member member = findMember();
         String information = member.toString();
