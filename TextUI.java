@@ -69,26 +69,23 @@ public class TextUI {
                                 int disciplineChoice = InputHandler.inputMenuChoice(4);
                                 switch(disciplineChoice)
                                 {
-                                    case 1:
-                                    {
+                                    case 1: {
                                         OutputHandler.printGenericErrorText();
                                         break;
                                     }
-                                    case 2:
-                                    {
+                                    case 2: {
                                         OutputHandler.printGenericErrorText();
                                         break;
                                     }
-                                    case 3:
-                                    {
+                                    case 3: {
                                         OutputHandler.printGenericErrorText();
                                         break;
                                     }
-                                    case 4:
-                                    {
+                                    case 4: {
                                         OutputHandler.printGenericErrorText();
                                         break;
                                     }
+                                }
                             }
                         }
                     }
