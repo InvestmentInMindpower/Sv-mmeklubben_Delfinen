@@ -25,4 +25,9 @@ public class StaevneResultat {
         return cpr + "," + lokation + "," + placering + "," + tid;
     }
 
+    public String getCPR()
+    {
+        return cpr;
+    }
+
 }

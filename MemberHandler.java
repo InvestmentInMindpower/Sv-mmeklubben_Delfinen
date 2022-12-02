@@ -302,6 +302,17 @@ public class MemberHandler implements MemberHandlerInterface
         userData.outputToMemberDatabase();
     }
 
+    public void printTournamentStatementForMember()
+    {
+        String inputCPR = "100619918888";
+        for(StaevneResultat staevneResultat : staevneResultatList)
+        {
+            if(staevneResultat.getCPR().equals("100619918888"))
+            {
+                System.out.println(staevneResultat);
+            }
+        }
+    }
 
     //output memberList to database
     //TODO: Nicolai, fix IKKE endnu
