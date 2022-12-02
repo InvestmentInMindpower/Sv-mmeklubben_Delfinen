@@ -13,6 +13,29 @@ public class OutputHandler
         System.out.println("Please try again");
     }
 
+    public static void printErrorAccess()
+    {
+        System.out.println("An error Ocurred");
+        System.out.println("You don´t have permission to use this feature");
+    }
+
+    public static void printAskForPassword()
+    {
+        System.out.println("Please enter your password, your permissions will be granted accordingly");
+    }
+
+    public static void printWrongPassword()
+    {
+        System.out.println("Wrong password");
+        System.out.println("please try again");
+    }
+
+    public static void printOutOfAttemps()
+    {
+        System.out.println("You´re out of password attemps");
+        System.out.println("Shutting down...");
+    }
+
     public static void printErrorWIP()
     {
         System.out.println("An error Ocurred");
@@ -31,6 +54,8 @@ public class OutputHandler
         printWithSpacing4("6: Add new Staevne data");
         printWithSpacing4("7: Receive payment");
         printWithSpacing4("8: Charge all members");
+        printWithSpacing4("9: Revoke Membership");
+        printWithSpacing4("10: Exit");
         printTextBoxEnd();
     }
 

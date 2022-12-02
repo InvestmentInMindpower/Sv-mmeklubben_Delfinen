@@ -37,6 +37,34 @@ public class InputHandler
         return input;
     }
 
+    public static String inputPassword() throws InputMismatchException
+    {
+
+        boolean correctInput = false;
+        String input = "null";
+        while(!correctInput)
+        {
+            OutputHandler.printAskForPassword();
+            try
+            {
+                input = globalInput.next();
+            }
+            catch(InputMismatchException e)
+            {
+                OutputHandler.printGenericErrorText();
+            }
+            if(input != "null")
+            {
+                correctInput = true;
+            }
+            else
+            {
+                OutputHandler.printGenericErrorText();
+            }
+        }
+        return input;
+    }
+
     public static void InputStaeveneDataFromFile(ArrayList<StaevneResultat> staevneResultatList, String staevnePath) throws FileNotFoundException {
         String stavneLine = "";
         String staevneLine = "";
@@ -96,9 +124,8 @@ public class InputHandler
                 throw new RuntimeException(e);
             }
         }
-
-
     }
+
     public static String inputCPR() throws InputMismatchException
     {
         boolean correctInput = false;

@@ -7,16 +7,18 @@ import java.time.*;
 import java.util.Collections;
 import java.util.Comparator;
 
-public class MemberHandler
+public class MemberHandler implements MemberHandlerInterface
 {
     ArrayList<Member> memberList;
 
     UserData userData;
+    Register register;
     ArrayList<StaevneResultat> staevneResultatList;
 
     public MemberHandler() throws FileNotFoundException {
         this.memberList = new ArrayList<>();
         this.staevneResultatList = new ArrayList<>();
+        this.register = new Register(0);
         this.userData = new UserData(memberList, staevneResultatList);
         userData.bootUserData();
     }
