@@ -134,6 +134,52 @@ public class MemberHandler
         OutputHandler.printAllMemberInformation(information);
 
     }
+    public void UpdateMemberType()
+    {
+
+
+        OutputHandler.printTextBoxStart();
+        System.out.println("Please Enter Cpr Number");
+        OutputHandler.printTextBoxEnd();
+        Member member = findMember();
+        System.out.println("Is Swimmer a Competitor[1] or a Workout[2] swimmer?");
+        int selection = InputHandler.inputInt();
+        if(selection == 1)
+        {
+            member.setSwimmerType("CompetitiveSwimmer");
+        }
+        if(selection == 2)
+        {
+            member.setSwimmerType("WorkoutSwimmer");
+        }
+        userData.outputToMemberDatabase();
+    }
+    public void UpdateMemberAgeGroup()
+    {
+        OutputHandler.printTextBoxStart();
+        System.out.println("Please Enter Cpr Number");
+        OutputHandler.printTextBoxEnd();
+        Member member = findMember();
+        OutputHandler.printTextBoxStart();
+        System.out.println("Please Update With New Cpr Number");
+        OutputHandler.printTextBoxEnd();
+        String cpr = InputHandler.inputCPR();
+        AgeGroup ageGroup = findAgeGroup(cpr);
+        member.setAgeGroup(ageGroup);
+        member.setCpr(cpr);
+        userData.outputToMemberDatabase();
+    }
+    public void UpdateMemberShipStatus()
+    {
+
+        OutputHandler.printTextBoxStart();
+        System.out.println("Please Enter Cpr Number");
+        OutputHandler.printTextBoxEnd();
+        Member member = findMember();
+        member.setMembershipStatus(InputHandler.fromInputToBool());
+
+        userData.outputToMemberDatabase();
+    }
 
     public int selectMembershipType()
     {
@@ -182,6 +228,16 @@ public class MemberHandler
         userData.fetchBestBrystsvoemning();
     }
 
+    public void updateSwimDiscipline()
+    {
+        OutputHandler.printTextBoxStart();
+        System.out.println("Please Enter The Cpr Number Of the Member Signing Up");
+        OutputHandler.printTextBoxEnd();
+        Member member = findMember();
+
+
+
+    }
     public void payDebt(String cpr)
     {
         for(Member member : memberList)

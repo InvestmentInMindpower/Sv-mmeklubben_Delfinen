@@ -183,6 +183,11 @@ public class InputHandler
         String input = globalInput.next();
         return input;
     }
+    public static int inputInt()
+    {
+        int input = globalInput.nextInt();
+        return input;
+    }
 
     public static boolean inputPayDebt()
     {
@@ -201,6 +206,7 @@ public class InputHandler
         }
         return payment;
     }
+
 
 
 }

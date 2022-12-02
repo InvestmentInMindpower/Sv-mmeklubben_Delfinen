@@ -44,6 +44,17 @@ public class OutputHandler
         printWithSpacing4("4: Sign up for, or change diciplines");
         printTextBoxEnd();
     }
+    public static void printTextUIMenuSwimDiscipline()
+    {
+        printTextBoxStart();
+        System.out.println("Choose which Discipline to Sign up for");
+        printWithSpacing4("1: Crawl");
+        printWithSpacing4("2: Brystsvoemning");
+        printWithSpacing4("3: Butterflysvoemning");
+        printWithSpacing4("4: RygCrawl");
+        printTextBoxEnd();
+    }
+
 
     public static void printCprFormatInfo()
     {

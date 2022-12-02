@@ -20,33 +20,56 @@ public class TextUI {
                 {
                     //Submenu for update Member
                     OutputHandler.printTextUIMenuUpdate();
-                    int updateChoice = InputHandler.inputMenuChoice(3);
+                    int updateChoice = InputHandler.inputMenuChoice(4);
                     switch(updateChoice)
                     {
                         case 1:
                         {
-                            //TODO: make a change membership type method
+                            memberHandler.UpdateMemberType();
                             //remember that this will change subscription fee and possibly remove staevneresults
-                            OutputHandler.printErrorWIP();
                             break;
                         }
                         case 2:
                         {
-                            //TODO: make a change membership AgeGroup method
-                            OutputHandler.printErrorWIP();
+                            memberHandler.UpdateMemberAgeGroup();
                             break;
                         }
                         case 3:
                         {
-                            //TODO: make a Change membership passive/active method
-                            //remember this will change subscription fee for member
-                            OutputHandler.printErrorWIP();
+                            memberHandler.UpdateMemberShipStatus();
+                            //remember this will change subscription fee for member !!!!! (dette skal vi lige kigge på sammen)
                             break;
                         }
                         case 4:
-                        {
+                        {   //submenu for valg af Discipline
+                            OutputHandler.printTextUIMenuSwimDiscipline();
+                            int disciplineChoice = InputHandler.inputMenuChoice(4);
+                            switch(disciplineChoice)
+                            {
+                                case 1:
+                                {
+                                    OutputHandler.printGenericErrorText();
+                                    break;
+                                }
+                                case 2:
+                                {
+                                    OutputHandler.printGenericErrorText();
+                                    break;
+                                }
+                                case 3:
+                                {
+                                    OutputHandler.printGenericErrorText();
+                                    break;
+                                }
+                                case 4:
+                                {
+                                    OutputHandler.printGenericErrorText();
+                                    break;
+                                }
+                            }
+
                             //TODO: make a sign up to a dicipline method which asks for each dicipline type
-                            OutputHandler.printErrorWIP();
+
                             break;
                         }
                     }
