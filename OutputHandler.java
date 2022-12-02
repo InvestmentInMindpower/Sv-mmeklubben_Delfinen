@@ -44,6 +44,30 @@ public class OutputHandler
         printWithSpacing4("4: Sign up for, or change diciplines");
         printTextBoxEnd();
     }
+
+    public static void printErrorAccess()
+    {
+        System.out.println("An error Ocurred");
+        System.out.println("You don´t have permission to use this feature");
+    }
+
+    public static void printAskForPassword()
+    {
+        System.out.println("Please enter your password, your permissions will be granted accordingly");
+    }
+
+    public static void printWrongPassword()
+    {
+        System.out.println("Wrong password");
+        System.out.println("please try again");
+    }
+
+    public static void printOutOfAttemps()
+    {
+        System.out.println("You´re out of password attemps");
+        System.out.println("Shutting down...");
+    }
+
     public static void printTextUIMenuSwimDiscipline()
     {
         printTextBoxStart();
@@ -87,7 +111,7 @@ public class OutputHandler
     {
         System.out.println("Please Enter Cpr number of the member you want information for");
     }
-    public static void printAllMemberInformation(String information)
+    public static void printMemberInformation(String information)
     {
         System.out.println(information);
     }

@@ -63,6 +63,34 @@ public class InputHandler
 
     }
 
+    public static String inputPassword() throws InputMismatchException
+    {
+
+        boolean correctInput = false;
+        String input = "null";
+        while(!correctInput)
+        {
+            OutputHandler.printAskForPassword();
+            try
+            {
+                input = globalInput.next();
+            }
+            catch(InputMismatchException e)
+            {
+                OutputHandler.printGenericErrorText();
+            }
+            if(input != "null")
+            {
+                correctInput = true;
+            }
+            else
+            {
+                OutputHandler.printGenericErrorText();
+            }
+        }
+        return input;
+    }
+
     public static void InputMemberDataFromFile(ArrayList<Member> memberList, String memberPath) throws FileNotFoundException
     {
         String memberLine = "";

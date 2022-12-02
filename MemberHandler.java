@@ -127,11 +127,11 @@ public class MemberHandler
         }
         return null;
     }
-    public void PrintAllMemberInformation()
+    public void PrintMemberInformation()
     {
         Member member = findMember();
         String information = member.toString();
-        OutputHandler.printAllMemberInformation(information);
+        OutputHandler.printMemberInformation(information);
 
     }
     public void UpdateMemberType()
