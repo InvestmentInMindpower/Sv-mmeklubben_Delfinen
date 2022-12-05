@@ -1,6 +1,5 @@
 
-public class Member implements MemberInterface
-{
+public class Member {
    //declaring variables
 
 
