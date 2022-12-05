@@ -1,7 +1,6 @@
 import java.io.File;
 import java.io.FileNotFoundException;
 import java.io.PrintStream;
-import java.lang.reflect.Array;
 import java.util.ArrayList;
 
 public class OutputHandler
@@ -56,7 +55,20 @@ public class OutputHandler
         System.out.println("Please enter your password, your permissions will be granted accordingly");
     }
 
-    public static void printWrongPassword()
+    public static void printMembersWhoHaveDebtMessage()
+    {
+        System.out.println("All the members who have a debt:");
+    }
+
+    public static void printMember(Member member)
+    {
+        System.out.println(member);
+    }
+    public static void printErrorUserNotFound()
+    {
+        System.out.println("We do not have a member who matches that number");
+    }
+    public static void printErrorWrongPassword()
     {
         System.out.println("Wrong password");
         System.out.println("please try again");
@@ -95,6 +107,50 @@ public class OutputHandler
         System.out.println("The CPR number is invalid");
         System.out.println("Please try again");
     }
+
+    public static void printBestTimesFor(String dicipline)
+    {
+        System.out.println("Best times for " + dicipline + ":");
+    }
+
+    public static void printPayDebtMenu()
+    {
+        System.out.println("Do you wish to pay your debt?");
+        printWithSpacing4("Press 1 for Yes");
+        printWithSpacing4("Press 2 for No");
+    }
+
+    public static void printThankPayment()
+    {
+        System.out.println("Thank you for your payment");
+    }
+
+    public static void printGoodDay()
+    {
+        System.out.println("Okay have a good day");
+    }
+
+
+    public static void printChargedToTrue()
+    {
+        System.out.println("Changed To: True");
+    }
+
+    public static void printChargedToFalse()
+    {
+        System.out.println("Changed To: False");
+    }
+
+    public static void printListSize(String text, ArrayList<Member> list)
+    {
+        System.out.println("Number of members: " + list.size());
+    }
+
+    public static void printInputBool()
+    {
+        System.out.println("Enter either [1] for Active membership status, or [2] for passive membership Status");
+    }
+
     public static void printInputMonthInfo()
     {
         System.out.println("Please enter the month of the year you were born in the format [MM] ecs. 12");

@@ -60,7 +60,7 @@ public class UserData
                 return Double.toString(o1.getCrawlResultat()).compareTo(Double.toString(o2.getCrawlResultat()));
             }
         });
-        System.out.println("Bedste tider for Crawlsvoemning:");
+        OutputHandler.printBestTimesFor("Crawlsvoemning");
 
         if(competitiveSwimmerList.size() < 5)
         {
@@ -92,7 +92,7 @@ public class UserData
                 return Double.toString(o1.getButterflyResultat()).compareTo(Double.toString(o2.getButterflyResultat()));
             }
         });
-        System.out.println("Bedste tider for Butterflysvoemning:");
+        OutputHandler.printBestTimesFor("Butterflysvoemning");
         if(competitiveSwimmerList.size() < 5)
         {
             for(int i=0; i<competitiveSwimmerList.size(); i++)
@@ -122,7 +122,8 @@ public class UserData
             {
                 return Double.toString(o1.getRygCrawlResultat()).compareTo(Double.toString(o2.getRygCrawlResultat()));
             }
-        });System.out.println("Bedste tider for Rygcrawlsvoemning:");
+        });
+        OutputHandler.printBestTimesFor("Rygcrawlsvoemning");
 
         if(competitiveSwimmerList.size() < 5)
         {
@@ -152,7 +153,8 @@ public class UserData
                 return Double.toString(o1.getBrystsoevmningResultat()).compareTo(Double.toString(o2.getBrystsoevmningResultat()));
             }
         });
-        System.out.println("Bedste tider for Brystsvoemning:");
+
+        OutputHandler.printBestTimesFor("Brystsvoemning");
 
         if(competitiveSwimmerList.size() < 5)
         {

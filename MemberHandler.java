@@ -241,11 +241,11 @@ public class MemberHandler
                     if(((CompetitiveSwimmer) member).getIsCrawl() == true)
                     {
                         ((CompetitiveSwimmer) member).setCrawl(false);
-                        System.out.println("Changed To: false");
+                        OutputHandler.printChargedToFalse();
                     } else if (((CompetitiveSwimmer) member).getIsCrawl() == false)
                     {
                         ((CompetitiveSwimmer) member).setCrawl(true);
-                        System.out.println("Changed To: true");
+                        OutputHandler.printChargedToTrue();
                     }
                 }
             }
@@ -265,11 +265,11 @@ public class MemberHandler
                     if(((CompetitiveSwimmer) member).getIsBrystSvoemning() == true)
                     {
                         ((CompetitiveSwimmer) member).setBrystSvoemning(false);
-                        System.out.println("Changed To: False");
+                        OutputHandler.printChargedToFalse();
                     }else if (((CompetitiveSwimmer) member).getIsBrystSvoemning() == false)
                     {
                         ((CompetitiveSwimmer) member).setBrystSvoemning(true);
-                        System.out.println("Changed To: True");
+                        OutputHandler.printChargedToTrue();
                     }
                 }
             }
@@ -289,11 +289,11 @@ public class MemberHandler
                     if(((CompetitiveSwimmer) member).getIsButterfly() == true)
                     {
                         ((CompetitiveSwimmer) member).setButterfly(false);
-                        System.out.println("Changed To: False");
+                        OutputHandler.printChargedToFalse();
                     }else if (((CompetitiveSwimmer) member).getIsButterfly() == false)
                     {
                         ((CompetitiveSwimmer) member).setButterfly(true);
-                        System.out.println("Changed To: True");
+                        OutputHandler.printChargedToTrue();
                     }
                 }
             }
@@ -314,19 +314,20 @@ public class MemberHandler
                     if(((CompetitiveSwimmer) member).getIsRygcrawl() == true)
                     {
                         ((CompetitiveSwimmer) member).setRygcrawl(false);
-                        System.out.println("Changed To: False");
+                        OutputHandler.printChargedToFalse();
                     }else if (((CompetitiveSwimmer) member).getIsRygcrawl() == false)
                     {
                         ((CompetitiveSwimmer) member).setRygcrawl(true);
-                        System.out.println("Changed To: True");
+                        OutputHandler.printChargedToTrue();
                     }
                 }
             }
         }
         userData.outputToMemberDatabase();
     }
-    public void payDebt(String cpr)
+    public void payDebt()
     {
+        String cpr = InputHandler.inputCPR();
         for(Member member : memberList)
         {
             //To-Do: Måske et try catch rundt om dette if statement, hvis der ikke er et cpr nr der matcher
@@ -336,11 +337,11 @@ public class MemberHandler
                 if(payBoolean)
                 {
                     member.setDebt(0);
-                    System.out.println("Thank you for your payment");
+                    OutputHandler.printThankPayment();
                 }
                 else
                 {
-                    System.out.println("Okay have a good day");
+                    OutputHandler.printGoodDay();
                     OutputHandler.printTextBoxEnd();
                     break;
                 }
@@ -349,8 +350,9 @@ public class MemberHandler
         }
     }
 
-    public void removeMember(String cpr)
+    public void removeMember()
     {
+        String cpr = InputHandler.inputCPR();
         for(Member member : memberList)
         {
             if(cpr.equals(member.getCpr()))
@@ -360,7 +362,7 @@ public class MemberHandler
             }
             else
             {
-                System.out.println("We do not have a member who matches that number");
+                OutputHandler.printErrorUserNotFound();
                 OutputHandler.printTextBoxEnd();
             }
         }
@@ -369,16 +371,15 @@ public class MemberHandler
 
     public void printResidualMembers()
     {
-        System.out.println("All the members who have a debt:");
+        OutputHandler.printMembersWhoHaveDebtMessage();
         for(Member member : memberList)
         {
             if(member.getDebt() > 0)
             {
-                System.out.println(member);
+                OutputHandler.printMember(member);
             }
         }
     }
-
 
     public void addToMemberList(Member member)
     {
@@ -386,14 +387,4 @@ public class MemberHandler
         System.out.println(member.toString());
         userData.outputToMemberDatabase();
     }
-
-
-    //output memberList to database
-    //TODO: Nicolai, fix IKKE endnu
-
-
-
-
-
-
 }

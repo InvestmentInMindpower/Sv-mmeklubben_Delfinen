@@ -44,7 +44,7 @@ public class AccessManager {
             }
             else
             {
-                OutputHandler.printWrongPassword();
+                OutputHandler.printErrorWrongPassword();
             }
             counter++;
         }
