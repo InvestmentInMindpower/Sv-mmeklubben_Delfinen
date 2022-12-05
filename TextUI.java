@@ -2,7 +2,7 @@ import java.io.FileNotFoundException;
 
 public class TextUI {
 
-    final private int menuOptionsCountMainMenu = 10;
+    final private int menuOptionsMainMenu = 10;
     final private int menuOptionsSubmenu = 4;
 
     public void runUI() throws FileNotFoundException {
@@ -23,7 +23,7 @@ public class TextUI {
             }
             else
             {
-                choice = InputHandler.inputMenuChoice(menuOptionsCountMainMenu);
+                choice = InputHandler.inputMenuChoice(menuOptionsMainMenu);
             }
 
             switch(choice)
