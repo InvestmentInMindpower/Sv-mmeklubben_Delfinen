@@ -144,7 +144,7 @@ public class MemberHandler
 
 
         OutputHandler.printTextBoxStart();
-        System.out.println("Please Enter Cpr Number");
+        OutputHandler.printPleaseEnterCpr();
         OutputHandler.printTextBoxEnd();
         Member member = findMember();
         System.out.println("Is Swimmer a Competitor[1] or a Workout[2] swimmer?");
@@ -162,11 +162,11 @@ public class MemberHandler
     public void UpdateMemberAgeGroup()
     {
         OutputHandler.printTextBoxStart();
-        System.out.println("Please Enter Cpr Number");
+        OutputHandler.printPleaseEnterCpr();
         OutputHandler.printTextBoxEnd();
         Member member = findMember();
         OutputHandler.printTextBoxStart();
-        System.out.println("Please Update With New Cpr Number");
+        OutputHandler.printPleaseEnterUpdatedCpr();
         OutputHandler.printTextBoxEnd();
         String cpr = InputHandler.inputCPR();
         AgeGroup ageGroup = findAgeGroup(cpr);
@@ -178,7 +178,7 @@ public class MemberHandler
     {
 
         OutputHandler.printTextBoxStart();
-        System.out.println("Please Enter Cpr Number");
+        OutputHandler.printPleaseEnterCpr();
         OutputHandler.printTextBoxEnd();
         Member member = findMember();
         OutputHandler.printInputBool();

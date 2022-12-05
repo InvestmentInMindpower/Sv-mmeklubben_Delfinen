@@ -52,6 +52,16 @@ public class OutputHandler
         System.out.println("CPR: " + cpr + "\nLokation: " + lokation + "\nPlacering: " + placering + "\nTid: " + tid);
     }
 
+    public static void printPleaseEnterCpr()
+    {
+        System.out.println("Please Enter Cpr Number");
+    }
+
+    public static void printPleaseEnterUpdatedCpr()
+    {
+        System.out.println("Please Update With New Cpr Number");
+    }
+
     public static void printIsInformationCorrect()
     {
         System.out.println("Are these information correct?");
