@@ -25,7 +25,7 @@ public class UserData
 
     public void outputToMemberDatabase()
     {
-        String memberFileName = "membersTest.txt";
+        String memberFileName = "members.txt";
         OutputHandler.writeToMemberDataBase(memberList, memberFileName);
 
     }

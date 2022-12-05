@@ -108,8 +108,8 @@ public class InputHandler
                     {
                         memberList.add(new CompetitiveSwimmer(values[0], values[1], AgeGroup.valueOf(values[2]), Boolean.parseBoolean(values[3]), Integer.parseInt(values[4]), Integer.parseInt(values[5]), Integer.parseInt(values[6]), Double.parseDouble(values[7]), Double.parseDouble(values[8]), Double.parseDouble(values[9]), Double.parseDouble(values[10]), values[11], Boolean.parseBoolean(values[12]), Boolean.parseBoolean(values[13]), Boolean.parseBoolean(values[14]), Boolean.parseBoolean(values[15])));
                     }
-                       OutputHandler.printListSize("Number of members", memberList);
                 }
+                OutputHandler.printListSize("Number of members", memberList);
             } catch (FileNotFoundException e) {
                 throw new RuntimeException(e);
             } catch (IOException e) {

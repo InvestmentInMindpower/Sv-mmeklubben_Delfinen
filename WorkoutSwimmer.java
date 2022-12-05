@@ -4,6 +4,7 @@ public class WorkoutSwimmer extends Member
         super(swimmerType, cpr, ageGroup, membershipStatus, subscriptionFee, debt, age);
     }
 
+
     // constructor to create from database
 }
 

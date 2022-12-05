@@ -1,6 +1,7 @@
 import java.io.File;
 import java.io.FileNotFoundException;
 import java.io.PrintStream;
+import java.sql.SQLOutput;
 import java.util.ArrayList;
 
 public class OutputHandler
@@ -30,18 +31,35 @@ public class OutputHandler
         printWithSpacing4("6: Add new Staevne data");
         printWithSpacing4("7: Receive payment");
         printWithSpacing4("8: Charge all members");
+        printWithSpacing4("9: Cancel Membership");
+        printWithSpacing4("10: Close program");
         printTextBoxEnd();
     }
 
     public static void printTextUIMenuUpdate()
     {
         printTextBoxStart();
-        System.out.println("Enter a number from 1-10 to select from the menu");
+        System.out.println("Enter a number from 1-4 to select from the menu");
         printWithSpacing4("1: Change Member type");
         printWithSpacing4("2: Change Member AgeGroup");
         printWithSpacing4("3: Change membership Status");
         printWithSpacing4("4: Sign up for, or change diciplines");
         printTextBoxEnd();
+    }
+
+    public static void printCloseProgram()
+    {
+        System.out.println("Closing program...");
+    }
+
+    public static void printCharged()
+    {
+        System.out.println("Successfully charged all members");
+    }
+
+    public static void printRemovedMember()
+    {
+        System.out.println("Successfully canceled the membership");
     }
 
     public static void printErrorAccess()
@@ -115,11 +133,19 @@ public class OutputHandler
 
     public static void printPayDebtMenu()
     {
-        System.out.println("Do you wish to pay your debt?");
         printWithSpacing4("Press 1 for Yes");
         printWithSpacing4("Press 2 for No");
     }
 
+    public static void printPersonDebt(int debt)
+    {
+        System.out.println("Your current debt is: " + debt);
+    }
+
+    public static void printWishToPay()
+    {
+        System.out.println("Do you wish to pay your debt?");
+    }
     public static void printThankPayment()
     {
         System.out.println("Thank you for your payment");
@@ -193,7 +219,7 @@ public class OutputHandler
         //build finalString that should be printed
         for (int i = 0; i < memberList.size(); i++)
         {
-            System.out.println(memberList.get(i).outputMembersToDatabase());
+            //System.out.println(memberList.get(i).outputMembersToDatabase());
             stringBuilder.append(memberList.get(i).outputMembersToDatabase());
             stringBuilder.append(System.getProperty("line.separator"));
         }

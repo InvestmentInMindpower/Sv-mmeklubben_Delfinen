@@ -125,6 +125,7 @@ public class MemberHandler
                 return member;
             }
         }
+        OutputHandler.printErrorUserNotFound();
         return null;
     }
     public void PrintMemberInformation()
@@ -193,6 +194,7 @@ public class MemberHandler
         {
             member.setDebt(calculateSubscriptionFee(member.getAgeGroup(),member.getCpr(), member.getMembershipStatus()));
         }
+        OutputHandler.printCharged();
         userData.outputToMemberDatabase();
     }
 
@@ -327,24 +329,22 @@ public class MemberHandler
     }
     public void payDebt()
     {
-        String cpr = InputHandler.inputCPR();
-        for(Member member : memberList)
+        Member member = findMember();
+        if(member != null)
         {
-            //To-Do: Måske et try catch rundt om dette if statement, hvis der ikke er et cpr nr der matcher
-            if(cpr.equals(member.getCpr()))
+            OutputHandler.printWishToPay();
+            OutputHandler.printPersonDebt(member.getDebt());
+            boolean payBoolean = InputHandler.inputPayDebt();
+            if(payBoolean)
             {
-                boolean payBoolean = InputHandler.inputPayDebt();
-                if(payBoolean)
-                {
-                    member.setDebt(0);
-                    OutputHandler.printThankPayment();
-                }
-                else
-                {
-                    OutputHandler.printGoodDay();
-                    OutputHandler.printTextBoxEnd();
-                    break;
-                }
+                member.setDebt(0);
+                OutputHandler.printPersonDebt(member.getDebt());
+                OutputHandler.printThankPayment();
+            }
+            else
+            {
+                OutputHandler.printGoodDay();
+                OutputHandler.printTextBoxEnd();
             }
             userData.outputToMemberDatabase();
         }
@@ -352,21 +352,14 @@ public class MemberHandler
 
     public void removeMember()
     {
-        String cpr = InputHandler.inputCPR();
-        for(Member member : memberList)
+        Member member = findMember();
+        if(member != null)
         {
-            if(cpr.equals(member.getCpr()))
-            {
-                memberList.remove(member);
-                //TO-DO: Print the whole Arraylist to the member file after the member have been removed
-            }
-            else
-            {
-                OutputHandler.printErrorUserNotFound();
-                OutputHandler.printTextBoxEnd();
-            }
+            memberList.remove(member);
+            OutputHandler.printTextBoxEnd();
+            OutputHandler.printRemovedMember();
+            userData.outputToMemberDatabase();
         }
-        userData.outputToMemberDatabase();
     }
 
     public void printResidualMembers()

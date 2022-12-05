@@ -2,6 +2,9 @@ import java.io.FileNotFoundException;
 
 public class TextUI {
 
+    final private int menuOptionsCountMainMenu = 10;
+    final private int menuOptionsSubmenu = 4;
+
     public void runUI() throws FileNotFoundException {
 
         AccessManager accessManager = new AccessManager();
@@ -20,7 +23,7 @@ public class TextUI {
             }
             else
             {
-                choice = InputHandler.inputMenuChoice(10);
+                choice = InputHandler.inputMenuChoice(menuOptionsCountMainMenu);
             }
 
             switch(choice)
@@ -43,7 +46,7 @@ public class TextUI {
                     {
                         //Submenu for update Member
                         OutputHandler.printTextUIMenuUpdate();
-                        int updateChoice = InputHandler.inputMenuChoice(3);
+                        int updateChoice = InputHandler.inputMenuChoice(menuOptionsSubmenu);
                         switch (updateChoice)
                         {
                             case 1:
@@ -66,7 +69,7 @@ public class TextUI {
                             case 4:
                             {
                                 OutputHandler.printTextUIMenuSwimDiscipline();
-                                int disciplineChoice = InputHandler.inputMenuChoice(4);
+                                int disciplineChoice = InputHandler.inputMenuChoice(menuOptionsSubmenu);
                                 switch(disciplineChoice)
                                 {
                                     case 1: {
@@ -147,7 +150,7 @@ public class TextUI {
                 {
                     if(permissions[choice])
                     {
-                        OutputHandler.printErrorWIP();
+                        memberHandler.payDebt();
                     }
                     else
                     {
@@ -159,7 +162,7 @@ public class TextUI {
                 {
                     if(permissions[choice])
                     {
-                        OutputHandler.printErrorWIP();
+                        memberHandler.chargeMembers();
                     }
                     else
                     {
@@ -171,7 +174,7 @@ public class TextUI {
                 {
                     if(permissions[choice])
                     {
-                        OutputHandler.printErrorWIP();
+                        memberHandler.removeMember();
                     }
                     else
                     {
@@ -183,7 +186,7 @@ public class TextUI {
                 {
                     if(permissions[choice])
                     {
-                        OutputHandler.printErrorWIP();
+                        OutputHandler.printCloseProgram();
                         run = false;
                     }
                     else

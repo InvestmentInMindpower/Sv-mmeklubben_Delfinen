@@ -83,7 +83,7 @@ public class Member {
 
     public String outputMembersToDatabase()
     {
-        return cpr + "," + ageGroup + "," + membershipStatus + "," + subscriptionFee + "," + debt + "," + age;
+        return swimmerType + "," + cpr + "," + ageGroup + "," + membershipStatus + "," + subscriptionFee + "," + debt + "," + age;
     }
 
 
