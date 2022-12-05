@@ -14,9 +14,7 @@ public class UserData
     }
 
     String memberPath = "members.txt";
-    String memberLine = "";
     String staevnePath = "staevneresultater.txt";
-    String staevneLine = "";
     public void bootUserData() throws FileNotFoundException
     {
         InputHandler.InputMemberDataFromFile(memberList, memberPath);
@@ -59,7 +57,7 @@ public class UserData
     }
     public void outputToStaevneResultatDatabase()
     {
-        String staevneFileName = "staevneResultater.txt";
+        String staevneFileName = "staevneresultater.txt";
         OutputHandler.writeToStaevneDataBase(staevneResultatList, staevneFileName);
     }
 
