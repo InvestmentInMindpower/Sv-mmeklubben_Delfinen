@@ -50,12 +50,12 @@ public class UserData
             tid = InputHandler.inputDouble();
 
             OutputHandler.printStaevneForm(cpr, lokation, placering, tid);
+            OutputHandler.printIsInformationCorrect();
             happy = InputHandler.fromInputToBool();
         }
         OutputHandler.printTextBoxEnd();
         staevneResultatList.add(new StaevneResultat(cpr, lokation, placering, tid));
-
-
+        outputToStaevneResultatDatabase();
     }
     public void outputToStaevneResultatDatabase()
     {

@@ -50,7 +50,12 @@ public class OutputHandler
     public static void printStaevneForm(String cpr, String lokation, int placering, double tid)
     {
         System.out.println("CPR: " + cpr + "\nLokation: " + lokation + "\nPlacering: " + placering + "\nTid: " + tid);
+    }
+
+    public static void printIsInformationCorrect()
+    {
         System.out.println("Are these information correct?");
+        System.out.println("Enter 1 for yes, 2 for no");
     }
 
     public static void printCloseProgram()
@@ -128,13 +133,6 @@ public class OutputHandler
     public static void printProvideLocation()
     {
         System.out.print("Provide Staevne Location");
-    }
-
-
-
-    public static void printCprFormatInfo()
-    {
-        System.out.println("please enter your ");
     }
 
     public static void printInputDayInfo()

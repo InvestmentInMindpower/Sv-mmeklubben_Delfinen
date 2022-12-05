@@ -44,6 +44,7 @@ public class MemberHandler
             String cpr = InputHandler.inputCPR();
             OutputHandler.printTextBoxEnd();
             AgeGroup ageGroup = findAgeGroup(cpr);
+            OutputHandler.printInputBool();
             boolean active = InputHandler.fromInputToBool();
             int fee = calculateSubscriptionFee(ageGroup, cpr, active);
             int debt = 0;
@@ -58,6 +59,7 @@ public class MemberHandler
             String cpr = InputHandler.inputCPR();
             OutputHandler.printTextBoxEnd();
             AgeGroup ageGroup = findAgeGroup(cpr);
+            OutputHandler.printInputBool();
             boolean active = InputHandler.fromInputToBool();
             int fee = calculateSubscriptionFee(ageGroup, cpr, active);
             int debt = 0;
@@ -179,8 +181,8 @@ public class MemberHandler
         System.out.println("Please Enter Cpr Number");
         OutputHandler.printTextBoxEnd();
         Member member = findMember();
+        OutputHandler.printInputBool();
         member.setMembershipStatus(InputHandler.fromInputToBool());
-
         userData.outputToMemberDatabase();
     }
 
