@@ -161,7 +161,6 @@ public class InputHandler
     {
         boolean correctInput = false;
         boolean outPutBoolean = false;
-        OutputHandler.printInputBool();
         while(!correctInput)
         {
             int input;
@@ -211,6 +210,23 @@ public class InputHandler
         {
             try {
                 input = globalInput.nextInt();
+                correctInput = true;
+            } catch (InputMismatchException e) {
+                OutputHandler.printGenericErrorText();
+            }
+        }
+        return input;
+
+    }
+
+    public static double inputDouble()
+    {
+        double input = 0;
+        boolean correctInput = false;
+        while(!correctInput)
+        {
+            try {
+                input = globalInput.nextDouble();
                 correctInput = true;
             } catch (InputMismatchException e) {
                 OutputHandler.printGenericErrorText();

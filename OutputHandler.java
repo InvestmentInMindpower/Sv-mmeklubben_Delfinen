@@ -47,6 +47,12 @@ public class OutputHandler
         printTextBoxEnd();
     }
 
+    public static void printStaevneForm(String cpr, String lokation, int placering, double tid)
+    {
+        System.out.println("CPR: " + cpr + "\nLokation: " + lokation + "\nPlacering: " + placering + "\nTid: " + tid);
+        System.out.println("Are these information correct?");
+    }
+
     public static void printCloseProgram()
     {
         System.out.println("Closing program...");
@@ -108,6 +114,22 @@ public class OutputHandler
         printWithSpacing4("4: RygCrawl");
         printTextBoxEnd();
     }
+
+    public static void printProvideTime()
+    {
+        System.out.println("Provide time");
+    }
+
+    public static void printProvidePlacement()
+    {
+        System.out.println("Provide placement");
+    }
+
+    public static void printProvideLocation()
+    {
+        System.out.print("Provide Staevne Location");
+    }
+
 
 
     public static void printCprFormatInfo()

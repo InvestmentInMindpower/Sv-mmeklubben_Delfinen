@@ -30,6 +30,33 @@ public class UserData
 
     }
 
+    public void createStaevneResultat()
+    {
+        OutputHandler.printTextBoxStart();
+        String cpr = "";
+        String lokation = "";
+        int placering = 0;
+        double tid = 0;
+
+        boolean happy = false;
+        while(!happy)
+        {
+            cpr = InputHandler.inputCPR();
+            OutputHandler.printProvideLocation();
+            lokation = InputHandler.inputString();
+            OutputHandler.printProvidePlacement();
+            placering = InputHandler.inputInt();
+            OutputHandler.printProvideTime();
+            tid = InputHandler.inputDouble();
+
+            OutputHandler.printStaevneForm(cpr, lokation, placering, tid);
+            happy = InputHandler.fromInputToBool();
+        }
+        OutputHandler.printTextBoxEnd();
+        staevneResultatList.add(new StaevneResultat(cpr, lokation, placering, tid));
+
+
+    }
     public void outputToStaevneResultatDatabase()
     {
         String staevneFileName = "staevneResultater.txt";

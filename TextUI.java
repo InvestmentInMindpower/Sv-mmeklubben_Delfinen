@@ -138,7 +138,8 @@ public class TextUI {
                 {
                     if(permissions[choice])
                     {
-                        OutputHandler.printErrorWIP();
+                        memberHandler.getUserData();
+                        memberHandler.getUserData().createStaevneResultat();
                     }
                     else
                     {

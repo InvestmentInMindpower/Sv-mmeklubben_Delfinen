@@ -29,7 +29,9 @@ public class MemberHandler
 
 //TODO: make it so this is dependant on the number of members in memberList on startup
 
-
+    public UserData getUserData() {
+        return userData;
+    }
     public void CreateMember()
     {
         OutputHandler.printTextBoxStart();
