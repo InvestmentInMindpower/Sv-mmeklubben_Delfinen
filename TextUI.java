@@ -140,15 +140,31 @@ public class TextUI {
                 }
                 case 3:
                 {
-                    if(permissions[choice])
-                    {
-                        memberHandler.getBestSwimmerData();
+                    if (permissions[choice]) {
+                        OutputHandler.printTextUIMenuBestResults();
+                        int updateChoice = InputHandler.inputMenuChoice(menuOptionsSubmenu - 1);
+                        switch (updateChoice) {
+                            case 1: {
+                                memberHandler.getBestSwimmerData();
+                                break;
+                            }
+                            case 2: {
+                                memberHandler.printBestTournamentTimeForSpecificUser();
+                                break;
+                            }
+                            case 3: {
+                                //exit menu by going back
+                                break;
+                            }
+                        }
+
                     }
                     else
                     {
                         OutputHandler.printErrorAccess();
                     }
                     break;
+                    //Submenu for update Member
                 }
                 case 4:
                 {

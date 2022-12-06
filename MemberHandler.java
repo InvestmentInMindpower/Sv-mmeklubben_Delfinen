@@ -222,9 +222,13 @@ public class MemberHandler implements MemberHandlerInterface
     public void getBestSwimmerData()
     {
         userData.fetchBestCrawlResultat();
+        OutputHandler.printString("\n");
         userData.fetchBestButterflyResultat();
+        OutputHandler.printString("\n");
         userData.fetchBestRygCrawlResultat();
+        OutputHandler.printString("\n");
         userData.fetchBestBrystsvoemning();
+        OutputHandler.printString("\n");
     }
 
     public void updateSwimDisciplineCrawl()
@@ -434,6 +438,20 @@ public class MemberHandler implements MemberHandlerInterface
         {
             OutputHandler.printErrorUserType();
         }
+    }
+
+    public void printBestTournamentTimeForSpecificUser()
+    {
+        Member member = findMember();
+        OutputHandler.printString("Finding results and printing...");
+        for(StaevneResultat staevneResultat: staevneResultatList)
+        {
+            if(staevneResultat.getCpr().equals(member.getCpr()))
+            {
+                OutputHandler.printString(staevneResultat.toString());
+            }
+        }
+
     }
 
     public void removeMember()

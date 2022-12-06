@@ -17,8 +17,25 @@ public class StaevneResultat {
 
     public String toString()
     {
-        return "CPR: " + cpr + " - Lokation: " + lokation + " - Placering: " + placering + " - Tid: " + tid;
+        return "\nCPR: " + cpr + " - Lokation: " + lokation + " - Placering: " + placering + " - Tid: " + tid;
     }
+
+    public String getCpr() {
+        return cpr;
+    }
+
+    public String getLokation() {
+        return lokation;
+    }
+
+    public int getPlacering() {
+        return placering;
+    }
+
+    public double getTid() {
+        return tid;
+    }
+
 
     public String outputStaevneResultat()
     {

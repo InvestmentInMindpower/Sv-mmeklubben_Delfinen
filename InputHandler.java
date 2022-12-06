@@ -41,10 +41,8 @@ public class InputHandler
     }
 
     public static void InputStaeveneDataFromFile(ArrayList<StaevneResultat> staevneResultatList, String staevnePath) throws FileNotFoundException {
-        String stavneLine = "";
         String staevneLine = "";
         BufferedReader br;
-        br = new BufferedReader(new FileReader(staevnePath));
         {
             try {
                 br = new BufferedReader(new FileReader(staevnePath));

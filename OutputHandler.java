@@ -46,10 +46,10 @@ public class OutputHandler
         printTextBoxStart();
         System.out.println("Enter a number from 1-10 to select from the menu");
         printWithSpacing4("1: Register new member");
-        printWithSpacing4("2: Update member");
-        printWithSpacing4("3: Print top 5 best swimmers for all disciplines");
-        printWithSpacing4("4: Print all member information");
-        printWithSpacing4("5: Print members with unpaid subscription fees");
+        printWithSpacing4("2: Update member information or subscription");
+        printWithSpacing4("3: Show training or Staevne results");
+        printWithSpacing4("4: Show all member information");
+        printWithSpacing4("5: Show members with unpaid subscription fees");
         printWithSpacing4("6: Add new Staevne data");
         printWithSpacing4("7: Receive payment");
         printWithSpacing4("8: Charge all members");
@@ -58,10 +58,20 @@ public class OutputHandler
         printTextBoxEnd();
     }
 
+    public static void printTextUIMenuBestResults()
+    {
+        printTextBoxStart();
+        System.out.println("Enter a number from 1-3 to select from the menu");
+        printWithSpacing4("1: Show top 5 best swimmers for all disciplines");
+        printWithSpacing4("2: Show a specific swimmers staevneresults");
+        printWithSpacing4("3: Go Back");
+        printTextBoxEnd();
+    }
+
     public static void printTextUIMenuUpdate()
     {
         printTextBoxStart();
-        System.out.println("Enter a number from 1-4 to select from the menu");
+        System.out.println("Enter a number from 1-6 to select from the menu");
         printWithSpacing4("1: Change Member type");
         printWithSpacing4("2: Change Member AgeGroup");
         printWithSpacing4("3: Change membership Status");
@@ -74,7 +84,7 @@ public class OutputHandler
     public static void printTextUIMenuUpdateTime()
     {
         printTextBoxStart();
-        System.out.println("Enter a number from 1-4 to select from the menu");
+        System.out.println("Enter a number from 1-5 to select from the menu");
         printWithSpacing4("1: Change Crawl Result For a member");
         printWithSpacing4("1: Change Butterfly Result For a member");
         printWithSpacing4("3: Change Brystsvoemning Result For a member");

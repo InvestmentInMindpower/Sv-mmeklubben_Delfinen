@@ -80,6 +80,7 @@ public class AccessManager {
             for (int i = 1; i <= 10; i++)
             {
                 if(i == 2) permissions[i] = true;
+                else if(i == 3) permissions[i] = true;
                 else if(i == 4) permissions[i] = true;
                 else if(i == 10) permissions[i] = true;
                 else permissions[i] = false;
