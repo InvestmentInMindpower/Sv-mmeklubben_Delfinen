@@ -6,12 +6,20 @@ public class TextUI {
     final private int menuOptionsSubmenu = 4;
 
     public void runUI() throws FileNotFoundException {
-
+        boolean run = false;
         AccessManager accessManager = new AccessManager();
         Access accessLevel = accessManager.askPassword();
         Boolean[] permissions =  accessManager.determinePermissions(accessLevel);
-        MemberHandler memberHandler = new MemberHandler();
-        boolean run = true;
+        MemberHandler memberHandler = null;
+        if(accessLevel != Access.nill)
+        {
+            memberHandler = new MemberHandler();
+            run = true;
+        }
+        else if(accessLevel == Access.nill)
+        {
+            run = false;
+        }
         while(run)
         {
             OutputHandler.printTextUIMenu();

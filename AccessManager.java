@@ -60,6 +60,7 @@ public class AccessManager {
             {
                 if(i == 7) permissions[i] = false;
                 else if(i == 8) permissions[i] = false;
+                else if(i == 10) permissions[i] = true;
                 else permissions[i] = true;
             }
         }
@@ -98,7 +99,8 @@ public class AccessManager {
         {
             for(int i = 1; i <= 10; i++)
             {
-                permissions[i] = false;
+                if(i == 10) permissions[i] = true;
+                else permissions[i] = false;
             }
         }
 
