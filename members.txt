@@ -3,5 +3,9 @@ CompetitiveSwimmer,010120158888,Junior,true,1200,0,31,0.0,0.0,0.0,0.0,MortenTrae
 CompetitiveSwimmer,100619008888,Senior,true,1200,0,31,0.0,0.0,0.0,0.0,MortenTraener,true,true,false,false
 WorkoutSwimmer,241200008888,Senior,true,1200,0,2022
 WorkoutSwimmer,011219858888,Senior,true,1200,0,2022
-CompetetiveSwimmer,041219998888,Senior,true,1600,0,23,0.0,0.0,0.0,0.0,Martin,false,false,false,false
+WorkoutSwimmer,100619918888,Senior,true,1600,0,31
+WorkoutSwimmer,100719918888,Senior,true,1600,0,31
+WorkoutSwimmer,110619918888,Senior,true,1600,0,31
+WorkoutSwimmer,120619918888,Senior,true,1600,0,31
+WorkoutSwimmer,140119918888,Senior,true,1600,0,31
 

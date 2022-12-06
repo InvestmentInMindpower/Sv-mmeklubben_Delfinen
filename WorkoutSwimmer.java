@@ -6,5 +6,10 @@ public class WorkoutSwimmer extends Member
 
 
     // constructor to create from database
+
+    public String toString()
+    {
+        return "CPR: " + super.getCpr() + "\nAgeGroup: " + super.getAgeGroup() + "\nMemebershipStatus: " + super.getMembershipStatus();
+    }
 }
 

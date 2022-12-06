@@ -1,5 +1,5 @@
 
-public class Member {
+public abstract class Member {
    //declaring variables
 
 
