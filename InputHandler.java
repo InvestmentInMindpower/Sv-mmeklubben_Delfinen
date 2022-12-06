@@ -20,18 +20,21 @@ public class InputHandler
             try
             {
                 input = globalInput.nextInt();
+                if(input <= options && input > 0)
+                {
+                    correctInput = true;
+                }
+                else
+                {
+                    globalInput.nextLine();
+                    OutputHandler.printGenericErrorText();
+                }
             }
             catch(InputMismatchException e)
             {
                 OutputHandler.printGenericErrorText();
-            }
-            if(input <= options && input > 0)
-            {
-                correctInput = true;
-            }
-            else
-            {
-                OutputHandler.printGenericErrorText();
+                globalInput.nextLine();
+                input = 0;
             }
         }
         return input;
@@ -53,8 +56,10 @@ public class InputHandler
 
                 }
             } catch (FileNotFoundException e) {
+                globalInput.nextLine();
                 throw new RuntimeException(e);
             } catch (IOException e) {
+                globalInput.nextLine();
                 throw new RuntimeException(e);
             }
         }
@@ -72,19 +77,22 @@ public class InputHandler
             try
             {
                 input = globalInput.next();
+                if(input != "null")
+                {
+                    correctInput = true;
+                }
+                else
+                {
+                    globalInput.nextLine();
+                    OutputHandler.printGenericErrorText();
+                }
             }
             catch(InputMismatchException e)
             {
+                globalInput.nextLine();
                 OutputHandler.printGenericErrorText();
             }
-            if(input != "null")
-            {
-                correctInput = true;
-            }
-            else
-            {
-                OutputHandler.printGenericErrorText();
-            }
+
         }
         return input;
     }
@@ -111,8 +119,10 @@ public class InputHandler
                 }
                 OutputHandler.printListSize("Number of members", memberList);
             } catch (FileNotFoundException e) {
+                globalInput.nextLine();
                 throw new RuntimeException(e);
             } catch (IOException e) {
+                globalInput.nextLine();
                 throw new RuntimeException(e);
             }
         }
@@ -144,11 +154,13 @@ public class InputHandler
                 }
                 else
                 {
+                    globalInput.nextLine();
                     OutputHandler.printCprFormError();
                 }
             }
             catch(Exception e)
             {
+                globalInput.nextLine();
                 OutputHandler.printGenericErrorText();
             }
 
@@ -185,11 +197,13 @@ public class InputHandler
                 }
                 else
                 {
+                    globalInput.nextLine();
                     OutputHandler.printGenericErrorText();
                 }
             }
             catch(InputMismatchException e)
             {
+                globalInput.nextLine();
                 OutputHandler.printGenericErrorText();
             }
         }
@@ -212,6 +226,7 @@ public class InputHandler
                 input = globalInput.nextInt();
                 correctInput = true;
             } catch (InputMismatchException e) {
+                globalInput.nextLine();
                 OutputHandler.printGenericErrorText();
             }
         }
@@ -229,6 +244,7 @@ public class InputHandler
                 input = globalInput.nextDouble();
                 correctInput = true;
             } catch (InputMismatchException e) {
+                globalInput.nextLine();
                 OutputHandler.printGenericErrorText();
             }
         }

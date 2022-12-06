@@ -1,8 +1,11 @@
-CompetitiveSwimmer,100619918888,Senior,true,1200,0,31,0.0,0.0,0.0,0.0,MortenTraener,true,true,false,false
-CompetitiveSwimmer,010120158888,Junior,true,1200,0,31,0.0,0.0,0.0,0.0,MortenTraener,true,true,true,false
-CompetitiveSwimmer,100619008888,Senior,true,1200,0,31,0.0,0.0,0.0,0.0,MortenTraener,true,true,false,false
-WorkoutSwimmer,241200008888,Senior,true,1200,0,2022
-WorkoutSwimmer,011219858888,Senior,true,1200,0,2022
-WorkoutSwimmer,100619918888,Senior,true,1600,0,31
-WorkoutSwimmer,100719918888,Senior,true,1600,0,31
+CompetitiveSwimmer,100619918888,Senior,true,1200,3200,31,0.0,0.0,0.0,0.0,MortenTraener,true,true,false,false
+CompetitiveSwimmer,010120158888,Junior,true,1200,2000,31,0.0,0.0,0.0,0.0,MortenTraener,true,true,true,false
+CompetitiveSwimmer,100619008888,Senior,true,1200,3200,31,0.0,0.0,0.0,0.0,MortenTraener,true,true,false,false
+WorkoutSwimmer,241200008888,Senior,true,1200,3200,2022
+WorkoutSwimmer,011219858888,Senior,true,1200,3200,2022
+WorkoutSwimmer,100619918888,Senior,true,1600,3200,31
+WorkoutSwimmer,100719918888,Senior,true,1600,3200,31
+WorkoutSwimmer,110619918888,Senior,true,1600,3200,31
+WorkoutSwimmer,120619918888,Senior,true,1600,3200,31
+WorkoutSwimmer,140119918888,Senior,true,1600,3200,31
 
