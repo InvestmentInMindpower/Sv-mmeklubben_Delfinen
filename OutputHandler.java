@@ -9,14 +9,31 @@ public class OutputHandler
 
     public static void printGenericErrorText()
     {
-        System.out.println("An error Ocurred");
+        printErrorOcurred();
         System.out.println("Please try again");
     }
 
     public static void printErrorWIP()
     {
-        System.out.println("An error Ocurred");
+        printErrorOcurred();
         System.out.println("This feature has not been made yet");
+    }
+
+    public static void printErrorOcurred()
+    {
+        System.out.println("An error Occurred");
+    }
+    public static void printErrorUserType()
+    {
+        printErrorOcurred();
+        System.out.println("This user is not a competitive svimmer");
+    }
+
+    public static void printErrorResultNotBetter()
+    {
+        printErrorOcurred();
+        System.out.println("The result entered is not better than the original result");
+        System.out.println("Nothing was changed");
     }
 
     public static void printString(String printMessage)
@@ -49,7 +66,26 @@ public class OutputHandler
         printWithSpacing4("2: Change Member AgeGroup");
         printWithSpacing4("3: Change membership Status");
         printWithSpacing4("4: Sign up for, or change diciplines");
+        printWithSpacing4("5: Change Training result");
+        printWithSpacing4("6: Go back");
         printTextBoxEnd();
+    }
+
+    public static void printTextUIMenuUpdateTime()
+    {
+        printTextBoxStart();
+        System.out.println("Enter a number from 1-4 to select from the menu");
+        printWithSpacing4("1: Change Crawl Result For a member");
+        printWithSpacing4("1: Change Butterfly Result For a member");
+        printWithSpacing4("3: Change Brystsvoemning Result For a member");
+        printWithSpacing4("4: Change RygCrawl Result For a member");
+        printWithSpacing4("5: Go back");
+        printTextBoxEnd();
+    }
+
+    public static void printPleaseEnterTime()
+    {
+        System.out.println("Please enter the new training result in the form of a time ecs: [24.324]");
     }
 
     public static void printStaevneForm(String cpr, String lokation, int placering, double tid)

@@ -7,5 +7,5 @@ WorkoutSwimmer,100619918888,Senior,true,1600,6400,31
 WorkoutSwimmer,100719918888,Senior,true,1600,6400,31
 WorkoutSwimmer,110619918888,Senior,true,1600,6400,31
 WorkoutSwimmer,120619918888,Senior,true,1600,6400,31
-WorkoutSwimmer,140119918888,Senior,true,1600,6400,31
+WorkoutSwimmer,140119918888,Senior,true,1600,0,31
 

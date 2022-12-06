@@ -347,6 +347,95 @@ public class MemberHandler implements MemberHandlerInterface
         }
     }
 
+    public void updateTrainingTimeCrawl()
+    {
+        Member member = findMember();
+        if(member instanceof CompetitiveSwimmer)
+        {
+            OutputHandler.printPleaseEnterTime();
+            double input = InputHandler.inputDouble();
+            if(input < member.getCrawlResultat() || member.getCrawlResultat() == 0)
+            {
+                member.setCrawlResultat(input);
+                OutputHandler.printString("User Crawl time was changed to: " + member.getCrawlResultat());
+            }
+            else
+            {
+                OutputHandler.printErrorResultNotBetter();
+            }
+        }
+        else
+        {
+            OutputHandler.printErrorUserType();
+        }
+    }
+    public void updateTrainingTimeButterfly()
+    {
+        Member member = findMember();
+        if(member instanceof CompetitiveSwimmer)
+        {
+            OutputHandler.printPleaseEnterTime();
+            double input = InputHandler.inputDouble();
+            if(input < member.getButterflyResultat() || member.getButterflyResultat() == 0)
+            {
+                member.setButterflyResultat(input);
+                OutputHandler.printString("User Butterfly time was changed to: " + member.getButterflyResultat());
+            }
+            else
+            {
+                OutputHandler.printErrorResultNotBetter();
+            }
+        }
+        else
+        {
+            OutputHandler.printErrorUserType();
+        }
+    }
+    public void updateTrainingTimeBryst()
+    {
+        Member member = findMember();
+        if(member instanceof CompetitiveSwimmer)
+        {
+            OutputHandler.printPleaseEnterTime();
+            double input = InputHandler.inputDouble();
+            if(input < member.getBrystsoevmningResultat() || member.getBrystsoevmningResultat() == 0)
+            {
+                member.setBrystsoevmningResultat(input);
+                OutputHandler.printString("User Brystsvoemning time was changed to: " + member.getBrystsoevmningResultat());
+            }
+            else
+            {
+                OutputHandler.printErrorResultNotBetter();
+            }
+        }
+        else
+        {
+            OutputHandler.printErrorUserType();
+        }
+    }
+    public void updateTrainingTimeRygCrawl()
+    {
+        Member member = findMember();
+        if(member instanceof CompetitiveSwimmer)
+        {
+            OutputHandler.printPleaseEnterTime();
+            double input = InputHandler.inputDouble();
+            if(input < member.getRygCrawlResultat() || member.getRygCrawlResultat() == 0)
+            {
+                member.setRygCrawlResultat(input);
+                OutputHandler.printString("User RygCrawl time was changed to: " + member.getRygCrawlResultat());
+            }
+            else
+            {
+                OutputHandler.printErrorResultNotBetter();
+            }
+        }
+        else
+        {
+            OutputHandler.printErrorUserType();
+        }
+    }
+
     public void removeMember()
     {
         Member member = findMember();

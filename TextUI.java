@@ -54,7 +54,7 @@ public class TextUI {
                     {
                         //Submenu for update Member
                         OutputHandler.printTextUIMenuUpdate();
-                        int updateChoice = InputHandler.inputMenuChoice(menuOptionsSubmenu);
+                        int updateChoice = InputHandler.inputMenuChoice(menuOptionsSubmenu + 2);
                         switch (updateChoice)
                         {
                             case 1:
@@ -97,6 +97,38 @@ public class TextUI {
                                         break;
                                     }
                                 }
+                            }
+                            case 5:
+                            {
+                                OutputHandler.printTextUIMenuUpdateTime();
+                                int menuChoice = InputHandler.inputMenuChoice(menuOptionsSubmenu + 1);
+                                switch(menuChoice) {
+                                    case 1: {
+                                        memberHandler.updateTrainingTimeCrawl();
+                                        break;
+                                    }
+                                    case 2: {
+                                        memberHandler.updateTrainingTimeButterfly();
+                                        break;
+                                    }
+                                    case 3: {
+                                        memberHandler.updateTrainingTimeBryst();
+                                        break;
+                                    }
+                                    case 4: {
+                                        memberHandler.updateTrainingTimeRygCrawl();
+                                        break;
+                                    }
+                                    case 5: {
+                                        //exit menu by going back
+                                        break;
+                                    }
+                                }
+                            }
+                            case 6:
+                            {
+                                //exit menu by going back
+                                break;
                             }
                         }
                     }
