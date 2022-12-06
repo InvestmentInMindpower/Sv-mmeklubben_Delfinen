@@ -189,7 +189,7 @@ public class MemberHandler implements MemberHandlerInterface
     {
         for(Member member : memberList)
         {
-            member.setDebt(calculateSubscriptionFee(member.getAgeGroup(),member.getCpr(), member.getMembershipStatus()));
+            member.addDebt(calculateSubscriptionFee(member.getAgeGroup(),member.getCpr(), member.getMembershipStatus()));
         }
         OutputHandler.printCharged();
         userData.outputToMemberDatabase();

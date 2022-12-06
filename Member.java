@@ -74,16 +74,16 @@ public abstract class Member {
     {
         return debt;
     }
-    public void setDebt(int fee) {debt = debt + fee;}
-
+    public void setDebt(int fee) {debt = fee;}
+    public void addDebt(int fee) {debt = debt + fee;}
     public String toString()
     {
-        return "CPR: " + cpr + "\nAgeGroup: " + ageGroup + "\nMembershipStatus: " + membershipStatus + "\nCrawlResultat: " + crawlResultat + "\nBrystResultat :" + brystsoevmningResultat + "\nButterflyResultat: " + butterflyResultat +"\nRygcrawlResultat: "+ rygCrawlResultat;
+        return "\nCPR: " + cpr + "\nAgeGroup: " + ageGroup + "\nMembershipStatus: " + membershipStatus + "\nCrawlResultat: " + crawlResultat + "\nBrystResultat :" + brystsoevmningResultat + "\nButterflyResultat: " + butterflyResultat +"\nRygcrawlResultat: "+ rygCrawlResultat;
     }
 
     public String residualsString()
     {
-        return "CPR: " + cpr + "\nDebt: " + debt + "\nSubscriptionFee " + subscriptionFee;
+        return "\nCPR: " + cpr + "\nDebt: " + debt + "\nSubscriptionFee " + subscriptionFee;
     }
 
     public String outputMembersToDatabase()
