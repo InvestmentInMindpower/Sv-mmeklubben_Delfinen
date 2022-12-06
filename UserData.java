@@ -5,8 +5,8 @@ import java.util.Comparator;
 
 public class UserData
 {
-    ArrayList<Member> memberList;
-    ArrayList<StaevneResultat> staevneResultatList;
+    private ArrayList<Member> memberList;
+    private ArrayList<StaevneResultat> staevneResultatList;
     public UserData(ArrayList<Member> memberList, ArrayList<StaevneResultat> staevneResultatList)
     {
         this.memberList = memberList;

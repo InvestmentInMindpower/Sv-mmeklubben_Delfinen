@@ -7,7 +7,7 @@ public class AccessManager {
     protected String trainerPassword = "trainer";
     protected String memberPassword = "guest";
 
-    Boolean[] permissions = new Boolean[]{false, false, false, false, false, false, false, false, false, false, false};
+    private Boolean[] permissions = new Boolean[]{false, false, false, false, false, false, false, false, false, false, false};
     public Access askPassword()
     {
         int counter = 0;

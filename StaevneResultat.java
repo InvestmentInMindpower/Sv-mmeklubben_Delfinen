@@ -1,10 +1,10 @@
 public class StaevneResultat {
 
     //declaring variables
-    String cpr;
-    String lokation;
-    int placering;
-    double tid;
+    private String cpr;
+    private String lokation;
+    private int placering;
+    private double tid;
 
     //creating constructors
     public StaevneResultat(String cpr, String lokation, int placering, double tid)

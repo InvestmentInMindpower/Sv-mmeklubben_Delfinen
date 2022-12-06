@@ -4,7 +4,7 @@ public class Member {
 
 
 
-    String swimmerType;
+    private String swimmerType;
     private String cpr;
     private AgeGroup ageGroup;
     private boolean membershipStatus;
