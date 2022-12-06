@@ -20,14 +20,7 @@ public class MemberHandler implements MemberHandlerInterface
         this.userData = new UserData(memberList, staevneResultatList);
         userData.bootUserData();
     }
-    //booting system
 
-    //create members from database
-
-    //booting complete
-
-
-//TODO: make it so this is dependant on the number of members in memberList on startup
 
     public UserData getUserData() {
         return userData;
@@ -373,7 +366,7 @@ public class MemberHandler implements MemberHandlerInterface
         {
             if(member.getDebt() > 0)
             {
-                OutputHandler.printMember(member);
+                OutputHandler.printString(member.residualsString());
             }
         }
     }

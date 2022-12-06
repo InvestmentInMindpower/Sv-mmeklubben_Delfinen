@@ -81,6 +81,11 @@ public abstract class Member {
         return "CPR: " + cpr + "\nAgeGroup: " + ageGroup + "\nMembershipStatus: " + membershipStatus + "\nCrawlResultat: " + crawlResultat + "\nBrystResultat :" + brystsoevmningResultat + "\nButterflyResultat: " + butterflyResultat +"\nRygcrawlResultat: "+ rygCrawlResultat;
     }
 
+    public String residualsString()
+    {
+        return "CPR: " + cpr + "\nDebt: " + debt + "\nSubscriptionFee " + subscriptionFee;
+    }
+
     public String outputMembersToDatabase()
     {
         return swimmerType + "," + cpr + "," + ageGroup + "," + membershipStatus + "," + subscriptionFee + "," + debt + "," + age;

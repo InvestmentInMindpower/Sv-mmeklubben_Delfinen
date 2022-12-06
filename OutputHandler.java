@@ -19,6 +19,11 @@ public class OutputHandler
         System.out.println("This feature has not been made yet");
     }
 
+    public static void printString(String printMessage)
+    {
+        System.out.println(printMessage);
+    }
+
     public static void printTextUIMenu()
     {
         printTextBoxStart();
