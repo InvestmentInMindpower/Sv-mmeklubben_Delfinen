@@ -59,7 +59,7 @@ public class MemberHandler implements MemberHandlerInterface
             int age = castCPRToAge(cpr);
             System.out.println("Which trainer have you signed up for [Martin] eller [Christina], skriv navn");
             String trainer = InputHandler.inputString();
-            CompetitiveSwimmer competitiveSwimmer = new CompetitiveSwimmer("CompetetiveSwimmer", cpr, ageGroup, active, fee, debt, age, trainer);
+            CompetitiveSwimmer competitiveSwimmer = new CompetitiveSwimmer("CompetitiveSwimmer", cpr, ageGroup, active, fee, debt, age, trainer);
             addToMemberList(competitiveSwimmer);
             userData.outputToMemberDatabase();
         }
@@ -367,11 +367,13 @@ public class MemberHandler implements MemberHandlerInterface
             {
                 OutputHandler.printErrorResultNotBetter();
             }
+
         }
         else
         {
             OutputHandler.printErrorUserType();
         }
+        userData.outputToMemberDatabase();
     }
     public void updateTrainingTimeButterfly()
     {
@@ -384,6 +386,7 @@ public class MemberHandler implements MemberHandlerInterface
             {
                 member.setButterflyResultat(input);
                 OutputHandler.printString("User Butterfly time was changed to: " + member.getButterflyResultat());
+
             }
             else
             {
@@ -394,6 +397,7 @@ public class MemberHandler implements MemberHandlerInterface
         {
             OutputHandler.printErrorUserType();
         }
+        userData.outputToMemberDatabase();
     }
     public void updateTrainingTimeBryst()
     {
@@ -406,6 +410,7 @@ public class MemberHandler implements MemberHandlerInterface
             {
                 member.setBrystsoevmningResultat(input);
                 OutputHandler.printString("User Brystsvoemning time was changed to: " + member.getBrystsoevmningResultat());
+
             }
             else
             {
@@ -416,6 +421,7 @@ public class MemberHandler implements MemberHandlerInterface
         {
             OutputHandler.printErrorUserType();
         }
+        userData.outputToMemberDatabase();
     }
     public void updateTrainingTimeRygCrawl()
     {
@@ -428,6 +434,7 @@ public class MemberHandler implements MemberHandlerInterface
             {
                 member.setRygCrawlResultat(input);
                 OutputHandler.printString("User RygCrawl time was changed to: " + member.getRygCrawlResultat());
+
             }
             else
             {
@@ -438,6 +445,7 @@ public class MemberHandler implements MemberHandlerInterface
         {
             OutputHandler.printErrorUserType();
         }
+        userData.outputToMemberDatabase();
     }
 
     public void printBestTournamentTimeForSpecificUser()

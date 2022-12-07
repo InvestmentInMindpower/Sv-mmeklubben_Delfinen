@@ -32,10 +32,10 @@ public class CompetitiveSwimmer extends Member
     }
 
     private boolean isRygcrawl;
-    private double crawlResultat;
-    private double brystsoevmningResultat;
-    private double butterflyResultat;
-    private double rygCrawlResultat;
+    double crawlResultat;
+    double brystsoevmningResultat;
+    double butterflyResultat;
+    double rygCrawlResultat;
 
     public void setCrawl(boolean crawl)
 {
@@ -80,6 +80,11 @@ public class CompetitiveSwimmer extends Member
     public String outputMembersToDatabase()
     {
         return super.getSwimmerType() + "," + super.getCpr() + "," + super.getAgeGroup() + "," + super.getMembershipStatus() + "," + super.getSubscriptionFee() + "," + super.getDebt() + "," + super.getAge() + "," + super.getCrawlResultat() + "," + super.getBrystsoevmningResultat() + "," + super.getButterflyResultat() + "," + super.getRygCrawlResultat() + "," + trainer + "," + isCrawl + "," + isBrystSvoemning + "," + isButterfly + "," + isRygcrawl;
+    }
+
+    public String toString()
+    {
+        return String.valueOf(crawlResultat);
     }
 
 }
