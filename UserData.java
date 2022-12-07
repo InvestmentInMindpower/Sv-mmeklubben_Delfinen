@@ -77,10 +77,10 @@ public class UserData
     public void fetchBestCrawlResultat()
     {
         ArrayList<CompetitiveSwimmer> competitiveSwimmerList = createCompetitiveSwimmerList();
-        Collections.sort(competitiveSwimmerList, new Comparator<Member>()
+        Collections.sort(competitiveSwimmerList, new Comparator<CompetitiveSwimmer>()
         {
             @Override
-            public int compare(Member o1, Member o2)
+            public int compare(CompetitiveSwimmer o1, CompetitiveSwimmer o2)
             {
                 return Double.toString(o1.getCrawlResultat()).compareTo(Double.toString(o2.getCrawlResultat()));
             }
@@ -109,10 +109,10 @@ public class UserData
     public void fetchBestButterflyResultat()
     {
         ArrayList<CompetitiveSwimmer> competitiveSwimmerList = createCompetitiveSwimmerList();
-        Collections.sort(competitiveSwimmerList, new Comparator<Member>()
+        Collections.sort(competitiveSwimmerList, new Comparator<CompetitiveSwimmer>()
         {
             @Override
-            public int compare(Member o1, Member o2)
+            public int compare(CompetitiveSwimmer o1, CompetitiveSwimmer o2)
             {
                 return Double.toString(o1.getButterflyResultat()).compareTo(Double.toString(o2.getButterflyResultat()));
             }
@@ -140,10 +140,10 @@ public class UserData
     public void fetchBestRygCrawlResultat()
     {
         ArrayList<CompetitiveSwimmer> competitiveSwimmerList = createCompetitiveSwimmerList();
-        Collections.sort(competitiveSwimmerList, new Comparator<Member>()
+        Collections.sort(competitiveSwimmerList, new Comparator<CompetitiveSwimmer>()
         {
             @Override
-            public int compare(Member o1, Member o2)
+            public int compare(CompetitiveSwimmer o1, CompetitiveSwimmer o2)
             {
                 return Double.toString(o1.getRygCrawlResultat()).compareTo(Double.toString(o2.getRygCrawlResultat()));
             }
@@ -170,10 +170,10 @@ public class UserData
     public void fetchBestBrystsvoemning()
     {
         ArrayList<CompetitiveSwimmer> competitiveSwimmerList = createCompetitiveSwimmerList();
-        Collections.sort(competitiveSwimmerList, new Comparator<Member>()
+        Collections.sort(competitiveSwimmerList, new Comparator<CompetitiveSwimmer>()
         {
             @Override
-            public int compare(Member o1, Member o2)
+            public int compare(CompetitiveSwimmer o1, CompetitiveSwimmer o2)
             {
                 return Double.toString(o1.getBrystsoevmningResultat()).compareTo(Double.toString(o2.getBrystsoevmningResultat()));
             }

@@ -12,10 +12,7 @@ public abstract class Member {
     private int debt;
     private int age;
 
-    private double crawlResultat;
-    private double brystsoevmningResultat;
-    private double butterflyResultat;
-    private double rygCrawlResultat;
+
 
     //creating constructors
     public Member(String swimmerType, String cpr, AgeGroup ageGroup, boolean membershipStatus, int subscriptionFee, int debt, int age)
@@ -69,6 +66,10 @@ public abstract class Member {
         return membershipStatus;
     }
 
+
+
+
+
     public int getSubscriptionFee() {return subscriptionFee;}
     public int getDebt()
     {
@@ -76,9 +77,10 @@ public abstract class Member {
     }
     public void setDebt(int fee) {debt = fee;}
     public void addDebt(int fee) {debt = debt + fee;}
+
     public String toString()
     {
-        return "\nCPR: " + cpr + "\nAgeGroup: " + ageGroup + "\nMembershipStatus: " + membershipStatus + "\nCrawlResultat: " + crawlResultat + "\nBrystResultat :" + brystsoevmningResultat + "\nButterflyResultat: " + butterflyResultat +"\nRygcrawlResultat: "+ rygCrawlResultat;
+        return "\nSwimmerType: " + swimmerType + "\nCPR: " + cpr + "\nAgeGroup: " + ageGroup + "\nMembershipStatus: " + membershipStatus + "\nSubscriptionFee: " + subscriptionFee + "\nDebt: " + debt + "\nAge: " + getAge();
     }
 
     public String residualsString()
@@ -91,43 +93,4 @@ public abstract class Member {
         return swimmerType + "," + cpr + "," + ageGroup + "," + membershipStatus + "," + subscriptionFee + "," + debt + "," + age;
     }
 
-
-    public void setCrawlResultat(double crawlResultat)
-    {
-        this.crawlResultat = crawlResultat;
-    }
-
-    public double getBrystsoevmningResultat()
-    {
-        return brystsoevmningResultat;
-    }
-
-    public void setBrystsoevmningResultat(double brystsoevmningResultat)
-    {
-        this.brystsoevmningResultat = brystsoevmningResultat;
-    }
-
-    public double getButterflyResultat()
-    {
-        return butterflyResultat;
-    }
-
-    public void setButterflyResultat(double butterflyResultat)
-    {
-        this.butterflyResultat = butterflyResultat;
-    }
-
-    public double getRygCrawlResultat()
-    {
-        return rygCrawlResultat;
-    }
-
-    public void setRygCrawlResultat(double rygCrawlResultat)
-    {
-        this.rygCrawlResultat = rygCrawlResultat;
-    }
-
-    public double getCrawlResultat() {
-        return crawlResultat;
-    }
 }

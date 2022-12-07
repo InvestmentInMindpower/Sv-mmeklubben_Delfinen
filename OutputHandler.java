@@ -86,7 +86,7 @@ public class OutputHandler
         printTextBoxStart();
         System.out.println("Enter a number from 1-5 to select from the menu");
         printWithSpacing4("1: Change Crawl Result For a member");
-        printWithSpacing4("1: Change Butterfly Result For a member");
+        printWithSpacing4("2: Change Butterfly Result For a member");
         printWithSpacing4("3: Change Brystsvoemning Result For a member");
         printWithSpacing4("4: Change RygCrawl Result For a member");
         printWithSpacing4("5: Go back");

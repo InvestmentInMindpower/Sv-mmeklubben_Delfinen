@@ -128,10 +128,18 @@ public class MemberHandler implements MemberHandlerInterface
     public void PrintMemberInformation()
     {
         Member member = findMember();
-        String information = member.toString();
-        OutputHandler.printMemberInformation(information);
-
+        if(member instanceof CompetitiveSwimmer)
+        {
+            String information = ((CompetitiveSwimmer) member).toString();
+            OutputHandler.printMemberInformation(information);
+        }
+        else if (member instanceof WorkoutSwimmer)
+        {
+            String information = ((WorkoutSwimmer) member).toString();
+            OutputHandler.printMemberInformation(information);
+        }
     }
+
     public void UpdateMemberType()
     {
 
@@ -358,10 +366,10 @@ public class MemberHandler implements MemberHandlerInterface
         {
             OutputHandler.printPleaseEnterTime();
             double input = InputHandler.inputDouble();
-            if(input < member.getCrawlResultat() || member.getCrawlResultat() == 0)
+            if(input < ((CompetitiveSwimmer) member).getCrawlResultat() || ((CompetitiveSwimmer) member).getCrawlResultat() == 0)
             {
-                member.setCrawlResultat(input);
-                OutputHandler.printString("User Crawl time was changed to: " + member.getCrawlResultat());
+                ((CompetitiveSwimmer) member).setCrawlResultat(input);
+                OutputHandler.printString("User Crawl time was changed to: " + ((CompetitiveSwimmer) member).getCrawlResultat());
             }
             else
             {
@@ -382,10 +390,10 @@ public class MemberHandler implements MemberHandlerInterface
         {
             OutputHandler.printPleaseEnterTime();
             double input = InputHandler.inputDouble();
-            if(input < member.getButterflyResultat() || member.getButterflyResultat() == 0)
+            if(input < ((CompetitiveSwimmer) member).getButterflyResultat() || ((CompetitiveSwimmer) member).getButterflyResultat() == 0)
             {
-                member.setButterflyResultat(input);
-                OutputHandler.printString("User Butterfly time was changed to: " + member.getButterflyResultat());
+                ((CompetitiveSwimmer) member).setButterflyResultat(input);
+                OutputHandler.printString("User Butterfly time was changed to: " + ((CompetitiveSwimmer) member).getButterflyResultat());
 
             }
             else
@@ -406,10 +414,10 @@ public class MemberHandler implements MemberHandlerInterface
         {
             OutputHandler.printPleaseEnterTime();
             double input = InputHandler.inputDouble();
-            if(input < member.getBrystsoevmningResultat() || member.getBrystsoevmningResultat() == 0)
+            if(input < ((CompetitiveSwimmer) member).getBrystsoevmningResultat() || ((CompetitiveSwimmer) member).getBrystsoevmningResultat() == 0)
             {
-                member.setBrystsoevmningResultat(input);
-                OutputHandler.printString("User Brystsvoemning time was changed to: " + member.getBrystsoevmningResultat());
+                ((CompetitiveSwimmer) member).setBrystsoevmningResultat(input);
+                OutputHandler.printString("User Brystsvoemning time was changed to: " + ((CompetitiveSwimmer) member).getBrystsoevmningResultat());
 
             }
             else
@@ -430,10 +438,10 @@ public class MemberHandler implements MemberHandlerInterface
         {
             OutputHandler.printPleaseEnterTime();
             double input = InputHandler.inputDouble();
-            if(input < member.getRygCrawlResultat() || member.getRygCrawlResultat() == 0)
+            if(input < ((CompetitiveSwimmer) member).getRygCrawlResultat() || ((CompetitiveSwimmer) member).getRygCrawlResultat() == 0)
             {
-                member.setRygCrawlResultat(input);
-                OutputHandler.printString("User RygCrawl time was changed to: " + member.getRygCrawlResultat());
+                ((CompetitiveSwimmer) member).setRygCrawlResultat(input);
+                OutputHandler.printString("User RygCrawl time was changed to: " + ((CompetitiveSwimmer) member).getRygCrawlResultat());
 
             }
             else
@@ -451,15 +459,17 @@ public class MemberHandler implements MemberHandlerInterface
     public void printBestTournamentTimeForSpecificUser()
     {
         Member member = findMember();
-        OutputHandler.printString("Finding results and printing...");
-        for(StaevneResultat staevneResultat: staevneResultatList)
+        if(member != null)
         {
-            if(staevneResultat.getCpr().equals(member.getCpr()))
+            OutputHandler.printString("Finding results and printing...");
+            for(StaevneResultat staevneResultat: staevneResultatList)
             {
-                OutputHandler.printString(staevneResultat.toString());
+                if(staevneResultat.getCpr().equals(member.getCpr()))
+                {
+                    OutputHandler.printString(staevneResultat.toString());
+                }
             }
         }
-
     }
 
     public void removeMember()

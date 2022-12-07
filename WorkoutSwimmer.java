@@ -9,7 +9,7 @@ public class WorkoutSwimmer extends Member
 
     public String toString()
     {
-        return "CPR: " + super.getCpr() + "\nAgeGroup: " + super.getAgeGroup() + "\nMemebershipStatus: " + super.getMembershipStatus();
+        return "\nSwimmerType: " + super.getSwimmerType() + "\nCPR: " + super.getCpr() + "\nAgeGroup: " + super.getAgeGroup() + "\nMembershipStatus: " + super.getMembershipStatus() + "\nSubscriptionFee: " + super.getSubscriptionFee() + "\nDebt: " + super.getDebt() + "\nAge: " + getAge();
     }
 }
 

@@ -54,6 +54,45 @@ public class CompetitiveSwimmer extends Member
         isRygcrawl = rygcrawl;
     }
 
+    public void setCrawlResultat(double crawlResultat)
+    {
+        this.crawlResultat = crawlResultat;
+    }
+
+    public double getBrystsoevmningResultat()
+    {
+        return brystsoevmningResultat;
+    }
+
+    public void setBrystsoevmningResultat(double brystsoevmningResultat)
+    {
+        this.brystsoevmningResultat = brystsoevmningResultat;
+    }
+
+    public double getButterflyResultat()
+    {
+        return butterflyResultat;
+    }
+
+    public void setButterflyResultat(double butterflyResultat)
+    {
+        this.butterflyResultat = butterflyResultat;
+    }
+
+    public double getRygCrawlResultat()
+    {
+        return rygCrawlResultat;
+    }
+
+    public void setRygCrawlResultat(double rygCrawlResultat)
+    {
+        this.rygCrawlResultat = rygCrawlResultat;
+    }
+
+    public double getCrawlResultat() {
+        return crawlResultat;
+    }
+
     // creating constructors
     public CompetitiveSwimmer(String swimmerType, String cpr, AgeGroup ageGroup, boolean membershipStatus, int subscriptionFee, int debt, int age, String trainer)
     {
@@ -79,12 +118,12 @@ public class CompetitiveSwimmer extends Member
 
     public String outputMembersToDatabase()
     {
-        return super.getSwimmerType() + "," + super.getCpr() + "," + super.getAgeGroup() + "," + super.getMembershipStatus() + "," + super.getSubscriptionFee() + "," + super.getDebt() + "," + super.getAge() + "," + super.getCrawlResultat() + "," + super.getBrystsoevmningResultat() + "," + super.getButterflyResultat() + "," + super.getRygCrawlResultat() + "," + trainer + "," + isCrawl + "," + isBrystSvoemning + "," + isButterfly + "," + isRygcrawl;
+        return super.getSwimmerType() + "," + super.getCpr() + "," + super.getAgeGroup() + "," + super.getMembershipStatus() + "," + super.getSubscriptionFee() + "," + super.getDebt() + "," + super.getAge() + "," + getCrawlResultat() + "," + getBrystsoevmningResultat() + "," + getButterflyResultat() + "," + getRygCrawlResultat() + "," + trainer + "," + isCrawl + "," + isBrystSvoemning + "," + isButterfly + "," + isRygcrawl;
     }
 
     public String toString()
     {
-        return String.valueOf(crawlResultat);
+        return "\nSvimmerType: " + super.getSwimmerType() + "\nCPR: " + super.getCpr() + "\nAgeGroup: " + super.getAgeGroup() + "\nMembershipStatus: " + super.getMembershipStatus() + "\nSubscriptionFee: " + super.getSubscriptionFee() + "\nDebt: " + super.getDebt() + "\nAge: " + getAge() + "\nCrawlResultat: " + crawlResultat + "\nBrystResultat :" + brystsoevmningResultat + "\nButterflyResultat: " + butterflyResultat +"\nRygcrawlResultat: "+ rygCrawlResultat;
     }
 
 }
